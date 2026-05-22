@@ -28,39 +28,64 @@
       href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Sassy+Frass&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="styles/Home-Page.css" />
   </head>
+
   <body>
-    <section name="welcoam-section">
-      <div class="home-page-container">
-        <div class="welcome-text-container">
-          <p class="text-find-hotel">
-            to
-            <span class="hightlight-find-text">Find</span>
-            <span class="heightlight-hotel-text">Hotel</span>
+    <div class="container-background">
+      <img
+        class="container-background-image"
+        src="image/image-home-page/backgground-hompage.avif"
+      />
+    </div>
+    <div class="main-container">
+      <header class="header-brand">
+        <div class="container-text-find-hotel">
+          <p class="brand-name-text">
+            find <span class="hightlight-h">H</span>otel
           </p>
-          <div class="welcome-box">
-            <p class="text-welcome">Welcome</p>
-            <p class="sub-text">
-              To help us find the best accommodations for your next trip, please
-              enter the name of the place you will be traveling to.
-            </p>
-          </div>
         </div>
-        <div class="map-container">
-          <img
-            class="image-map-container"
-            src="image/image-home-page/WhatsApp Image 2026-05-19 at 8.40.20 AM 1.svg"
-          />
-          <button class="selection-of-country">
-            <img
-              class="selection-icon-earth"
-              src="image/image-home-page/icon-hom-page/earth.png"
-            />
-          </button>
+      </header>
+
+      <div class="container-find-hotel">
+        <div class="find-hotel-header">
+          <h1 class="province-name">Vientaine</h1>
+        </div>
+        <div class="container-select-province">
+          <div class="left-section">
+            <h2 class="conutry-name">Laos</h2>
+            <div class="container-selection-province">
+              <div class="box-selection-province">
+                <label for="input-province">
+                  <h3 class="select-province-text">select province</h3>
+                </label>
+                <input
+                  type="text"
+                  id="input-province"
+                  class="input-province"
+                  placeholder="province"
+                />
+              </div>
+              <div class="sub-navigate-user">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quidem dolore excepturi facere distinctio, corporis molestiae,
+                  libero explicabo veritatis atque hic amet quod error ducimus
+                  ullam, sint reprehenderit neque obcaecati nobis.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="right-section"></div>
         </div>
       </div>
-    </section>
+    </div>
   </body>
 </html>
