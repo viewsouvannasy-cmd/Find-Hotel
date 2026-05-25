@@ -70,5 +70,3 @@ export const hotel = [
       "Situated in the heart of the ancient capital Luang Prabang, nestled beside the famous Wat Xiengthong, Victoria Xiengthong Palace is an exquisite blend of local cultural heritage and modern amenities. A royal and unique vacation awaits you, promising to bring many enticing experiences such as watching the sunset on a cruise, participating in the Alms giving ceremony, and exploring the traditional night market.",
   },
 ];
-
-console.log(hotel);

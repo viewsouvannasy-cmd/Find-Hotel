@@ -90,7 +90,7 @@ p {
 }
 
 .left-section {
-  width: 40%;
+  width: 45%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -140,7 +140,75 @@ p {
 }
 
 .right-section {
-  width: 60%;
-  height: 100%;
-  border: 3px solid lightpink;
+  width: 55%;
+  height: 600px;
+  padding: 0px 30px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.silder-container {
+  width: 90%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-300px);
+}
+.silder-container.move-smouth {
+  transition: transform 0.4s ease-out;
+}
+
+.image-hotel {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.box-controls {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.move-next {
+  border: none;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff5100c8;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.move-next img {
+  object-fit: cover;
+  width: 15px;
+}
+
+.move-back {
+  border: none;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff5100c8;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 50%;
+}
+
+.move-back img {
+  object-fit: cover;
+  width: 15px;
+}
+
+.move-next:hover,
+.move-back:hover {
+  background-color: #ff5100;
 }
