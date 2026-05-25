@@ -1,5 +1,6 @@
 export const hotel = [
   {
+    id: "0",
     name: "Amari Vientaine",
     image: "../image/hotel-image/amarivientiane.jpg",
     type: "vientaine",
@@ -7,6 +8,8 @@ export const hotel = [
       "Amari Vientiane, a radiant jewel perched by the banks of the Mekong River, promises to brighten your world. Become absorbed in the city's enchanting allure as you experience our 248 thoughtfully designed rooms and suites, where modern Lao and Thai aesthetics combine to create extraordinary possibilities for your stay",
   },
   {
+    id: "1",
+
     name: "Surestay Hotel",
     image: "../image/hotel-image/surestayhotel.jpg",
     type: "vientaine",
@@ -14,13 +17,17 @@ export const hotel = [
       "Contemporary 4 stars mid-scale hotel and conveniently located in the heart of Vientiane. Features 68 comfortable, contemporary and well equipped rooms with city and Mekong River view",
   },
   {
+    id: "2",
+
     name: "Salana Boutique Hotel",
-    image: "../image/hotel-image/amarivientiane.jpg",
+    image: "../image/hotel-image/salana-boutique-hotel.jpg",
     type: "vientaine",
     concept:
       "Salana Boutique Hotel offers an elegant retreat in the heart of Vientiane, blending modern luxury with the timeless charm of Laos. Just steps away from the Mekong River and historic temples, our hotel provides world-class accommodations and warm",
   },
   {
+    id: "3",
+
     name: "S Park Design Hotel",
     image: "../image/hotel-image/s-park-design-hotel.jpg",
     type: "vientaine",
@@ -28,6 +35,7 @@ export const hotel = [
       "Built in 2015, S Park Design Hotel is a distinct addition to Vientiane and a smart choice for travelers. Situated only 1 km from the city center, guests are well located to enjoy the town's attractions and activities",
   },
   {
+    id: "4",
     name: "DoubleTree by Hilton Vientiane",
     image: "../image/hotel-image/double-tree-by-hilton-vientiane.jpg",
     type: "vientaine",

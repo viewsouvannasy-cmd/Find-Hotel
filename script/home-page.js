@@ -1,10 +1,43 @@
 import { hotel } from "./data-hotel.js";
 
 const container = document.querySelector(".silder-container");
-const widthBox = 300;
+const widthBox = 400;
 let indexBox = 1;
 let isMove = false;
 const maxBox = 3;
+let startId = 0;
+
+function loadHotel() {
+  const provinceHotel = hotel.filter((hotel) => hotel.type === "vientaine");
+  const head = 0;
+  let lastId = provinceHotel[0].id;
+  provinceHotel.forEach((hotel) => {
+    if (Number(hotel.id) >= Number(lastId)) {
+      lastId = hotel.id;
+    }
+  });
+  const hotelHead = provinceHotel[lastId];
+  const hotelBottom = hotel.filter(
+    (hotel) => Number(hotel.id) === head && hotel.type === "vientaine",
+  );
+  const hotelBottomSecound = hotel.filter(
+    (hotel) => Number(hotel.id) === head + 1 && hotel.type === "vientaine",
+  );
+  console.log(hotelHead);
+  console.log(hotelBottom[0]);
+  console.log(hotelBottomSecound[0]);
+  let html = "";
+  provinceHotel.forEach((hotelDetial) => {
+    html += `
+        <img
+        class="image-hotel image-hotel-${hotelDetial.id}"
+        src="${hotelDetial.image}"
+              />
+        `;
+  });
+  return html;
+}
+console.log(loadHotel());
 
 function moveNext() {
   if (isMove) {
