@@ -4,64 +4,70 @@ const container = document.querySelector(".silder-container");
 const widthBox = 400;
 let indexBox = 1;
 let isMove = false;
-let maxBox = 0;
-let startId = 0;
+let maxBox;
+let currId = 0;
 
 loadHotel();
 function loadHotel() {
   const provinceHotel = hotel.filter((hotel) => hotel.type === "vientaine");
-  const head = 0;
-  let lastId = provinceHotel[0].id;
-  provinceHotel.forEach((hotel) => {
-    maxBox += 1;
-    if (Number(hotel.id) >= Number(lastId)) {
-      lastId = hotel.id;
-    }
-  });
-  const hotelHead = provinceHotel[lastId];
-  const hotelBottom = hotel.filter(
-    (hotel) => Number(hotel.id) === head && hotel.type === "vientaine",
-  );
-  const hotelBottomSecound = hotel.filter(
-    (hotel) => Number(hotel.id) === head + 1 && hotel.type === "vientaine",
-  );
+  maxBox = provinceHotel.length;
+
+  const hotelHead = provinceHotel[provinceHotel.length - 1];
+  const hotelBottom = provinceHotel[0];
+  const hotelBottomSecond = provinceHotel[1];
 
   let html = "";
-  provinceHotel.forEach((hotelDetial) => {
+  provinceHotel.forEach((hotelDetial, index) => {
     html += `
         <img
-        class="image-hotel image-hotel-${hotelDetial.id}"
+        class="image-hotel image-hotel-${index}"
         src="${hotelDetial.image}"
               />
         `;
   });
   const fullHtml = `<img
-        class="image-hotel image-hotel-${hotelHead.id}"
+        class="image-hotel image-hotel-last"
+        name="last"
         src="${hotelHead.image}"
               />
 
         ${html}
           
         <img
-        class="image-hotel image-hotel-${hotelBottom[0].id}"
-        src="${hotelBottom[0].image}"
+        class="image-hotel image-hotel-clone-0"
+        src="${hotelBottom.image}"
               />  
 
         <img
-        class="image-hotel image-hotel-${hotelBottomSecound[0].id}"
-        src="${hotelBottomSecound[0].image}"
+        class="image-hotel image-hotel-clone-1"
+        src="${hotelBottomSecond.image}"
               />  
         `;
 
-  console.log(fullHtml);
   container.innerHTML = fullHtml;
 }
-
+document
+  .querySelector(`.image-hotel-${currId}`)
+  .classList.add("hightlight-hotel");
 function moveNext() {
   if (isMove) {
     return;
   }
   isMove = true;
+
+  document
+    .querySelector(`.image-hotel-${currId}`)
+    .classList.remove("hightlight-hotel");
+
+  currId += 1;
+
+  if (currId >= maxBox) {
+    currId = 0;
+  }
+
+  document
+    .querySelector(`.image-hotel-${currId}`)
+    .classList.add("hightlight-hotel");
 
   indexBox += 1;
   container.classList.add("move-smouth");
@@ -71,6 +77,15 @@ function moveNext() {
     container.classList.remove("move-smouth");
     if (indexBox >= maxBox + 1) {
       indexBox = 1;
+      document
+        .querySelector(`.image-hotel-${currId}`)
+        .classList.remove("hightlight-hotel");
+
+      currId = 0;
+
+      document
+        .querySelector(`.image-hotel-${currId}`)
+        .classList.add("hightlight-hotel");
       container.style.transform = `translateY(-${indexBox * widthBox}px)`;
     }
     isMove = false;
@@ -83,17 +98,32 @@ function moveBack() {
   }
   isMove = true;
 
-  indexBox -= 1;
+  document
+    .querySelector(`.image-hotel-${currId}`)
+    .classList.remove("hightlight-hotel");
 
+  currId -= 1;
+
+  if (currId < 0) {
+    currId = maxBox - 1;
+  }
+
+  document
+    .querySelector(`.image-hotel-${currId}`)
+    .classList.add("hightlight-hotel");
+
+  indexBox -= 1;
   container.classList.add("move-smouth");
   container.style.transform = `translateY(-${indexBox * widthBox}px)`;
 
   setTimeout(() => {
     container.classList.remove("move-smouth");
+
     if (indexBox <= 0) {
       indexBox = maxBox;
       container.style.transform = `translateY(-${indexBox * widthBox}px)`;
     }
+
     isMove = false;
   }, 400);
 }

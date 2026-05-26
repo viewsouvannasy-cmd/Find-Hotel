@@ -155,6 +155,7 @@ p {
   flex-direction: column;
   transform: translateY(-400px);
   gap: 100px;
+  align-items: center;
 }
 .silder-container.move-smouth {
   transition: transform 0.4s ease-out;
@@ -162,10 +163,20 @@ p {
 
 .image-hotel {
   object-fit: cover;
-  width: 100%;
+  width: 93%;
+
   height: 300px;
   flex-shrink: 0;
   opacity: 0.5;
+  transition:
+    opacity 0.4s ease-out,
+    box-shabox 0.4s ease-out;
+}
+
+.hightlight-hotel {
+  opacity: 1;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.473);
+  width: 100%;
 }
 
 .box-controls {
