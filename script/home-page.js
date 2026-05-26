@@ -7,10 +7,23 @@ let isMove = false;
 let maxBox;
 let currId = 0;
 
-loadHotel();
-function loadHotel() {
-  const provinceHotel = hotel.filter((hotel) => hotel.type === "vientaine");
+loadHotel("vientaine");
+function loadHotel(province) {
+  const provinceName = document.querySelector(".province-name");
+  const displaySearch = document.querySelector(".display-result-search");
+  const provinceHotel = hotel.filter(
+    (hotel) => hotel.type === province.toLowerCase().replaceAll(" ", ""),
+  );
   maxBox = provinceHotel.length;
+  if (provinceHotel.length === 0) {
+    provinceName.innerHTML = province;
+    displaySearch.innerText = "No have data hotel information";
+    displaySearch.classList.remove("shake");
+    void displaySearch.offsetWidth;
+    displaySearch.classList.add("shake");
+    container.innerHTML = "";
+    return;
+  }
 
   const hotelHead = provinceHotel[provinceHotel.length - 1];
   const hotelBottom = provinceHotel[0];
@@ -44,11 +57,11 @@ function loadHotel() {
               />  
         `;
 
+  displaySearch.innerText = "";
   container.innerHTML = fullHtml;
+  provinceName.innerHTML = province;
 }
-document
-  .querySelector(`.image-hotel-${currId}`)
-  .classList.add("hightlight-hotel");
+
 function moveNext() {
   if (isMove) {
     return;
@@ -136,4 +149,14 @@ moveNextBtn.addEventListener("click", () => {
 const moveBackBtn = document.querySelector(".js-move-back");
 moveBackBtn.addEventListener("click", () => {
   moveBack();
+});
+
+const inputProvince = document.querySelector(".input-province");
+
+inputProvince.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    const inputValue = inputProvince.value;
+    loadHotel(inputValue);
+    inputProvince.value = "";
+  }
 });

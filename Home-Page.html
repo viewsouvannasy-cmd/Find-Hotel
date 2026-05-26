@@ -57,30 +57,28 @@
       <div class="container-find-hotel">
         <div class="find-hotel-header">
           <h1 class="province-name">Vientaine</h1>
+          <h2 class="conutry-name">Laos</h2>
         </div>
         <div class="container-select-province">
           <div class="left-section">
-            <h2 class="conutry-name">Laos</h2>
-            <div class="container-selection-province">
-              <div class="box-selection-province">
-                <label for="input-province">
-                  <h3 class="select-province-text">select province</h3>
-                </label>
-                <input
-                  type="text"
-                  id="input-province"
-                  class="input-province"
-                  placeholder="province"
-                />
-              </div>
-              <div class="sub-navigate-user">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quidem dolore excepturi facere distinctio, corporis molestiae,
-                  libero explicabo veritatis atque hic amet quod error ducimus
-                  ullam, sint reprehenderit neque obcaecati nobis.
-                </p>
-              </div>
+            <div class="box-selection-province">
+              <input
+                type="text"
+                id="input-province"
+                class="input-province"
+                placeholder="province"
+                list="data-province"
+              />
+              <datalist id="data-province">
+                <option value="Vientaine"></option>
+                <option value="Luang Prabang"></option>
+                <option value="Sainyabuli"></option>
+                <option value="Xaisomboun"></option>
+                <option value="Xiangkhouang"></option>
+                <option value="Oudomxay"></option>
+                <option value="Phongsaly"></option>
+              </datalist>
+              <p class="display-result-search"></p>
             </div>
           </div>
           <div class="right-section">
