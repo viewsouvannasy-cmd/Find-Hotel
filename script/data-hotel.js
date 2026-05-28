@@ -3,33 +3,147 @@ export const hotel = [
     id: "0",
     name: "Amari Vientaine",
     image: "../image/hotel-image/amarivientiane.jpg",
+    location: "Chaofa Ngum Road, Wat Chan Village, Vientiane, 01000, Laos",
+    star: 5,
+    price: 84,
+    amenities: [
+      {
+        name: "WiFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        nname: "Fitness Center",
+        image: "image/icon/fitness-center.png",
+      },
+      {
+        name: "Pool",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
     type: "vientaine",
     concept:
       "Amari Vientiane, a radiant jewel perched by the banks of the Mekong River, promises to brighten your world. Become absorbed in the city's enchanting allure as you experience our 248 thoughtfully designed rooms and suites, where modern Lao and Thai aesthetics combine to create extraordinary possibilities for your stay",
   },
   {
     id: "1",
-
-    name: "Surestay Hotel",
+    name: "Surestay Hotel by Best Western Vientiane",
     image: "../image/hotel-image/surestayhotel.jpg",
+    location: "XJ83+343, Vientiane, 85621, Laos",
+    star: 4,
+    price: 64,
+    amenities: [
+      {
+        name: "WiFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        nname: "Fitness Center",
+        image: "image/icon/fitness-center.png",
+      },
+      {
+        name: "24-hour Front Desk Service",
+        image: "image/icon/fornt-desk.png",
+      },
+    ],
     type: "vientaine",
     concept:
       "Contemporary 4 stars mid-scale hotel and conveniently located in the heart of Vientiane. Features 68 comfortable, contemporary and well equipped rooms with city and Mekong River view",
   },
   {
     id: "2",
-
     name: "Salana Boutique Hotel",
     image: "../image/hotel-image/salana-boutique-hotel.jpg",
+    location:
+      "Chao Anou Rd, 112 Vat Chan Village, chanthabouly district, Riverfront, Vientiane, 01000, Laos",
+    star: 4,
+    price: 69,
+    amenities: [
+      {
+        name: "WiFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        nname: "24-hour Front Desk Service",
+        image: "image/icon/fornt-desk.png",
+      },
+      {
+        name: "Spa",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
     type: "vientaine",
     concept:
       "Salana Boutique Hotel offers an elegant retreat in the heart of Vientiane, blending modern luxury with the timeless charm of Laos. Just steps away from the Mekong River and historic temples, our hotel provides world-class accommodations and warm",
   },
   {
     id: "3",
-
     name: "S Park Design Hotel",
     image: "../image/hotel-image/s-park-design-hotel.jpg",
+    location: "40 Dongnasok Road, Ban Nakham, Vientiane, 01000, Laos",
+    star: 4,
+    price: 30,
+    amenities: [
+      {
+        name: "WiFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        nname: "24-hour Front Desk Service",
+        image: "image/icon/fornt-desk.png",
+      },
+      {
+        name: "Spa",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
     type: "vientaine",
     concept:
       "Built in 2015, S Park Design Hotel is a distinct addition to Vientiane and a smart choice for travelers. Situated only 1 km from the city center, guests are well located to enjoy the town's attractions and activities",
@@ -37,6 +151,35 @@ export const hotel = [
   {
     id: "4",
     name: "DoubleTree by Hilton Vientiane",
+    location: "Rue Manthatourath, Chanthabouly, Vientiane, 01000, Laos",
+    star: 5,
+    price: 79,
+    amenities: [
+      {
+        name: "WiFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        nname: "24-hour Front Desk Service",
+        image: "image/icon/fornt-desk.png",
+      },
+      {
+        name: "Spa",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
     image: "../image/hotel-image/double-tree-by-hilton-vientiane.jpg",
     type: "vientaine",
     concept:
