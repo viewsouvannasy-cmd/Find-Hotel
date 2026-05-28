@@ -2,7 +2,7 @@ import { hotel } from "./data-hotel.js";
 
 const container = document.querySelector(".silder-container");
 const widthBox = 400;
-let indexBox = 1;
+let indexBox = 0;
 let isMove = false;
 let maxBox;
 let currId = 0;
@@ -25,10 +25,6 @@ function loadHotel(province) {
     return;
   }
 
-  const hotelHead = provinceHotel[provinceHotel.length - 1];
-  const hotelBottom = provinceHotel[0];
-  const hotelBottomSecond = provinceHotel[1];
-
   let html = "";
   provinceHotel.forEach((hotelDetial, index) => {
     html += `
@@ -38,32 +34,28 @@ function loadHotel(province) {
               />
         `;
   });
-  const fullHtml = `<img
-        class="image-hotel image-hotel-last"
-        name="last"
-        src="${hotelHead.image}"
-              />
-
-        ${html}
-          
-        <img
-        class="image-hotel image-hotel-clone-0"
-        src="${hotelBottom.image}"
-              />  
-
-        <img
-        class="image-hotel image-hotel-clone-1"
-        src="${hotelBottomSecond.image}"
-              />  
-        `;
 
   displaySearch.innerText = "";
-  container.innerHTML = fullHtml;
+  container.innerHTML = html;
   provinceName.innerHTML = province;
 }
 
+document
+  .querySelector(`.image-hotel-${currId}`)
+  .classList.add("hightlight-hotel");
+
 function moveNext() {
   if (isMove) {
+    return;
+  }
+
+  if (currId >= maxBox - 1) {
+    indexBox = 0;
+    currId = 0;
+    document
+      .querySelector(`.image-hotel-${currId}`)
+      .classList.add("hightlight-hotel");
+    container.style.transform = `translateY(-${indexBox * widthBox}px)`;
     return;
   }
   isMove = true;
@@ -73,10 +65,6 @@ function moveNext() {
     .classList.remove("hightlight-hotel");
 
   currId += 1;
-
-  if (currId >= maxBox) {
-    currId = 0;
-  }
 
   document
     .querySelector(`.image-hotel-${currId}`)
@@ -88,25 +76,17 @@ function moveNext() {
 
   setTimeout(() => {
     container.classList.remove("move-smouth");
-    if (indexBox >= maxBox + 1) {
-      indexBox = 1;
-      document
-        .querySelector(`.image-hotel-${currId}`)
-        .classList.remove("hightlight-hotel");
 
-      currId = 0;
-
-      document
-        .querySelector(`.image-hotel-${currId}`)
-        .classList.add("hightlight-hotel");
-      container.style.transform = `translateY(-${indexBox * widthBox}px)`;
-    }
     isMove = false;
   }, 400);
 }
 
 function moveBack() {
   if (isMove) {
+    return;
+  }
+
+  if (currId <= 0) {
     return;
   }
   isMove = true;
@@ -116,10 +96,6 @@ function moveBack() {
     .classList.remove("hightlight-hotel");
 
   currId -= 1;
-
-  if (currId < 0) {
-    currId = maxBox - 1;
-  }
 
   document
     .querySelector(`.image-hotel-${currId}`)
@@ -131,11 +107,6 @@ function moveBack() {
 
   setTimeout(() => {
     container.classList.remove("move-smouth");
-
-    if (indexBox <= 0) {
-      indexBox = maxBox;
-      container.style.transform = `translateY(-${indexBox * widthBox}px)`;
-    }
 
     isMove = false;
   }, 400);
@@ -157,6 +128,9 @@ inputProvince.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     const inputValue = inputProvince.value;
     loadHotel(inputValue);
+    document
+      .querySelector(`.image-hotel-${currId}`)
+      .classList.add("hightlight-hotel");
     inputProvince.value = "";
   }
 });
