@@ -1,6 +1,5 @@
 export const hotel = [
   {
-    id: "0",
     name: "Amari Vientaine",
     image: "../image/hotel-image/amarivientiane.jpg",
     location: "Chaofa Ngum Road, Wat Chan Village, Vientiane, 01000, Laos",
@@ -37,7 +36,6 @@ export const hotel = [
       "Amari Vientiane, a radiant jewel perched by the banks of the Mekong River, promises to brighten your world. Become absorbed in the city's enchanting allure as you experience our 248 thoughtfully designed rooms and suites, where modern Lao and Thai aesthetics combine to create extraordinary possibilities for your stay",
   },
   {
-    id: "1",
     name: "Surestay Hotel by Best Western Vientiane",
     image: "../image/hotel-image/surestayhotel.jpg",
     location: "XJ83+343, Vientiane, 85621, Laos",
@@ -65,7 +63,7 @@ export const hotel = [
         image: "image/icon/fitness-center.png",
       },
       {
-        name: "24-hour Front Desk Service",
+        name: "Front desk 24 hour",
         image: "image/icon/fornt-desk.png",
       },
     ],
@@ -74,7 +72,6 @@ export const hotel = [
       "Contemporary 4 stars mid-scale hotel and conveniently located in the heart of Vientiane. Features 68 comfortable, contemporary and well equipped rooms with city and Mekong River view",
   },
   {
-    id: "2",
     name: "Salana Boutique Hotel",
     image: "../image/hotel-image/salana-boutique-hotel.jpg",
     location:
@@ -99,7 +96,7 @@ export const hotel = [
         image: "image/icon/bus.png",
       },
       {
-        name: "24-hour Front Desk Service",
+        name: "Front desk 24 hour",
         image: "image/icon/fornt-desk.png",
       },
       {
@@ -112,7 +109,6 @@ export const hotel = [
       "Salana Boutique Hotel offers an elegant retreat in the heart of Vientiane, blending modern luxury with the timeless charm of Laos. Just steps away from the Mekong River and historic temples, our hotel provides world-class accommodations and warm",
   },
   {
-    id: "3",
     name: "S Park Design Hotel",
     image: "../image/hotel-image/s-park-design-hotel.jpg",
     location: "40 Dongnasok Road, Ban Nakham, Vientiane, 01000, Laos",
@@ -136,7 +132,7 @@ export const hotel = [
         image: "image/icon/bus.png",
       },
       {
-        name: "24-hour Front Desk Service",
+        name: "Front desk 24 hour",
         image: "image/icon/fornt-desk.png",
       },
       {
@@ -149,7 +145,6 @@ export const hotel = [
       "Built in 2015, S Park Design Hotel is a distinct addition to Vientiane and a smart choice for travelers. Situated only 1 km from the city center, guests are well located to enjoy the town's attractions and activities",
   },
   {
-    id: "4",
     name: "DoubleTree by Hilton Vientiane",
     location: "Rue Manthatourath, Chanthabouly, Vientiane, 01000, Laos",
     star: 5,
@@ -172,7 +167,7 @@ export const hotel = [
         image: "image/icon/bus.png",
       },
       {
-        name: "24-hour Front Desk Service",
+        name: "Front desk 24 hour",
         image: "image/icon/fornt-desk.png",
       },
       {
@@ -185,6 +180,191 @@ export const hotel = [
 
     concept:
       "DoubleTree by Hilton Vientiane is centrally located in the heart of the city, offering 188 comfortable guest rooms and suites, all with views of the cityscape or the Mekong River",
+  },
+  {
+    name: "Phongsavath Boutique Hotel",
+    location: "Rue Samsenthai, Vientiane, 01000, Laos",
+    star: 3,
+    price: 27,
+    amenities: [
+      {
+        name: "WIFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Restaurant",
+        image: "image/icon/restaurant.png",
+      },
+      {
+        name: "Front desk 24 hour",
+        image: "image/icon/fornt-desk.png",
+      },
+      {
+        name: "Non-smoking",
+        image: "image/icon/no-smoking.png",
+      },
+    ],
+    image: "../image/hotel-image/phongsavath-boutique-hotel.jpg",
+    type: "vientaine",
+
+    concept:
+      "Featuring a restaurant, Phongsavath Boutique Hotel offers rooms in Vientiane, 600 metres from Wat Sisaket and 700 metres from Hor Phra Keo. With a terrace, the 3-star hotel has air-conditioned rooms with free WiFi, each with a private bathroom.",
+  },
+  {
+    name: "LAOTEL Vientiane",
+    image: "../image/hotel-image/LAOTEL-vientiane.jpg",
+    location:
+      "Unit 9, Samsenthai Road P.O. Box 585, Vientiane Lao PDR, Vientiane, 01010, Laos",
+    star: 4,
+    price: 38,
+    amenities: [
+      {
+        name: "WIFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        name: "Non-smoking",
+        image: "image/icon/no-smoking.png",
+      },
+      {
+        name: "Pool",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
+    type: "vientaine",
+    concept:
+      "Situated in Vientiane, 1.6 km from Laos National Museum, LAOTEL VIENTIANE features accommodation with an outdoor swimming pool, free private parking, a fitness centre and a restaurant.",
+  },
+  {
+    name: "Xaysomboun Hotel & SPA",
+    image: "../image/hotel-image/Xaysomboun-Hotel-&-SPA.jpg",
+    location:
+      "01 Khounbulum Road, Sisaket Village, Chanthabuly District, Vientiane, 01000, Laos",
+    star: 4,
+    price: 33,
+    amenities: [
+      {
+        name: "WIFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        name: "Fitness Center",
+        image: "image/icon/fitness-center.png",
+      },
+      {
+        name: "Pool",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
+    type: "vientaine",
+    concept:
+      "Xaysomboun Hotel & SPA features a restaurant, a bar and a sun terrace with swimming pool and buffet breakfast in Vientiane. With free WiFi, this 4-star hotel offers a 24-hour front desk and a concierge service.",
+  },
+  {
+    name: "Villa de Mekong",
+    image: "../image/hotel-image/Villa-de-Mekong.jpg",
+    location:
+      "068 Unit 6, Inpeng Stress (Mekong Reverside Road) Ban Wat Chanh Chanthabouly, Vientiane, 01000, Laos",
+    star: 3,
+    price: 29,
+    amenities: [
+      {
+        name: "WIFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Front desk 24 hour",
+        image: "image/icon/fornt-dest.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        name: "Laundry",
+        image: "image/icon/laundry.png",
+      },
+      {
+        name: "Non-smoking",
+        image: "image/icon/no-smoking.png",
+      },
+    ],
+    type: "vientaine",
+    concept:
+      "Vientiane is home to Villa de Mekong. Thai-Laos Friendship Bridge and Chao Fa Ngum Statue are local landmarks, and travelers looking to shop may want to visit Vientiane Night Market and Ban Anou Night Market. Lao National Culture Hall and Lao National Ethnic Culture Park are also worth visiting.",
+  },
+  {
+    name: "COSI Vientiane Nam Phu",
+    image: "../image/hotel-image/COSI-Vientiane-Nam-Phu.jpg",
+    location:
+      "Nam Phu Square Setthathirath Road, Ban Xieng Yeun, Vientiane, 01000, Laos",
+    star: 3,
+    price: 41,
+    amenities: [
+      {
+        name: "WIFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Front desk 24 hour",
+        image: "image/icon/fornt-dest.png",
+      },
+      {
+        name: "Pool",
+        image: "image/icon/swimming-pool.png",
+      },
+      {
+        name: "Front desk 24 hour",
+        image: "image/icon/fornt-dest.png",
+      },
+      {
+        name: "Laundry",
+        image: "image/icon/laundry.png",
+      },
+      {
+        name: "Non-smoking",
+        image: "image/icon/no-smoking.png",
+      },
+    ],
+    type: "vientaine",
+    concept:
+      "COSI Vientiane Nam Phu is located in Vientiane, 4 km from Thatluang Stupa and 5.5 km from Lao-ITEC Exhibition Centre. With an outdoor swimming pool, the 3-star hotel has air-conditioned rooms with free WiFi.",
   },
   {
     name: "3 Nagas Hotel Luang Prabang - MGallery Collection",
