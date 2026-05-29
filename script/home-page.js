@@ -50,8 +50,13 @@ function moveNext() {
   }
 
   if (currId >= maxBox - 1) {
+    document
+      .querySelector(`.image-hotel-${currId}`)
+      .classList.remove("hightlight-hotel");
+
     indexBox = 0;
     currId = 0;
+
     document
       .querySelector(`.image-hotel-${currId}`)
       .classList.add("hightlight-hotel");

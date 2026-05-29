@@ -8,7 +8,7 @@ export const hotel = [
     price: 84,
     amenities: [
       {
-        name: "WiFI",
+        name: "WIFI",
         image: "image/icon/wi-fi.png",
       },
       {
@@ -24,7 +24,7 @@ export const hotel = [
         image: "image/icon/bus.png",
       },
       {
-        nname: "Fitness Center",
+        name: "Fitness Center",
         image: "image/icon/fitness-center.png",
       },
       {
@@ -45,7 +45,7 @@ export const hotel = [
     price: 64,
     amenities: [
       {
-        name: "WiFI",
+        name: "WIFI",
         image: "image/icon/wi-fi.png",
       },
       {
@@ -61,7 +61,7 @@ export const hotel = [
         image: "image/icon/bus.png",
       },
       {
-        nname: "Fitness Center",
+        name: "Fitness Center",
         image: "image/icon/fitness-center.png",
       },
       {
@@ -83,7 +83,7 @@ export const hotel = [
     price: 69,
     amenities: [
       {
-        name: "WiFI",
+        name: "WIFI",
         image: "image/icon/wi-fi.png",
       },
       {
@@ -99,7 +99,7 @@ export const hotel = [
         image: "image/icon/bus.png",
       },
       {
-        nname: "24-hour Front Desk Service",
+        name: "24-hour Front Desk Service",
         image: "image/icon/fornt-desk.png",
       },
       {
@@ -120,7 +120,7 @@ export const hotel = [
     price: 30,
     amenities: [
       {
-        name: "WiFI",
+        name: "WIFI",
         image: "image/icon/wi-fi.png",
       },
       {
@@ -136,7 +136,7 @@ export const hotel = [
         image: "image/icon/bus.png",
       },
       {
-        nname: "24-hour Front Desk Service",
+        name: "24-hour Front Desk Service",
         image: "image/icon/fornt-desk.png",
       },
       {
@@ -156,7 +156,7 @@ export const hotel = [
     price: 79,
     amenities: [
       {
-        name: "WiFI",
+        name: "WIFI",
         image: "image/icon/wi-fi.png",
       },
       {
@@ -172,7 +172,7 @@ export const hotel = [
         image: "image/icon/bus.png",
       },
       {
-        nname: "24-hour Front Desk Service",
+        name: "24-hour Front Desk Service",
         image: "image/icon/fornt-desk.png",
       },
       {
@@ -182,6 +182,7 @@ export const hotel = [
     ],
     image: "../image/hotel-image/double-tree-by-hilton-vientiane.jpg",
     type: "vientaine",
+
     concept:
       "DoubleTree by Hilton Vientiane is centrally located in the heart of the city, offering 188 comfortable guest rooms and suites, all with views of the cityscape or the Mekong River",
   },
@@ -189,6 +190,36 @@ export const hotel = [
     name: "3 Nagas Hotel Luang Prabang - MGallery Collection",
     image: "../image/hotel-image/3-nagas-luang-prabang.jpg",
     type: "luangprabang",
+    location:
+      "Vat Nong Village, Sakkaline Road, Democratic Republic Lao, Luang Prabang, 06000, Laos",
+    star: 4,
+    price: 99,
+    amenities: [
+      {
+        name: "24-hour Front Desk Service",
+        image: "image/icon/fornt-dest.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        name: "Fitness Center",
+        image: "image/icon/fitness-center.png",
+      },
+      {
+        name: "Spa",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
     concept:
       "3 Nagas Hotel Luang Prabang - MGallery Collection is highly regarded for its exceptional service, with staff often praised for their warm and attentive nature. The hotel offers well-appointed amenities, including spacious rooms with charming heritage details and access to a sister property's pool and spa",
   },
@@ -196,6 +227,36 @@ export const hotel = [
     name: "Homm Souvannaphoum Luang Prabang",
     image: "../image/hotel-image/homm-souvannaphoum-luang-prabang.jpg",
     type: "luangprabang",
+    location:
+      "PO Box 741 Rue Chao Fa Ngum, Banthatluang, Luang Prabang, 06000, Laos",
+    star: 4,
+    price: 93,
+    amenities: [
+      {
+        name: "WIFI",
+        image: "image/icon/wi-if.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        name: "Pool",
+        image: "image/icon/swimming.png",
+      },
+      {
+        name: "Spa",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
     concept:
       "Homm Souvannaphoum Luang Prabang is a boutique luxury hotel in the heart of Luang Prabang, Laos. It's the perfect retreat for the modern traveller seeking style and authenticity",
   },
@@ -203,6 +264,35 @@ export const hotel = [
     name: "MyBanLao Hotel",
     image: "../image/hotel-image/take-a-dip-in-the-longest.jpg",
     type: "luangprabang",
+    location: "Thammamikalath Rd Ban Mano Rd, Luang Prabang, 00, Laos",
+    star: 4,
+    price: 93,
+    amenities: [
+      {
+        name: "WIFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        name: "Fitness Center",
+        image: "image/icon/fitness-center.png",
+      },
+      {
+        name: "Pool",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
     concept:
       "A timeless eco-luxury hotel where you arrive as our guest and depart as our family. Conceived with environmental sustainability and preservation of its surrounding natural beauty in mind",
   },
@@ -210,6 +300,35 @@ export const hotel = [
     name: "Souphattra Hotel Luang Prabang",
     image: "../image/hotel-image/souphattra-hotel-luang-prabang.jpg",
     type: "luangprabang",
+    location: "Soupanouvong Road Ban Naviengkham, Luang Prabang, 06000, Laos",
+    star: 4,
+    price: 71,
+    amenities: [
+      {
+        name: "WIFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        name: "Fitness Center",
+        image: "image/icon/fitness-center.png",
+      },
+      {
+        name: "Pool",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
     concept:
       "Located in UNESCO World Heritage Luang Prabang, the award-winning luxury Souphattra Hotel radiates the elegance and charm of a Lao and French colonial-era mansion with contemporary design interiors and superb guest services",
   },
@@ -217,6 +336,35 @@ export const hotel = [
     name: "Victoria Xiengthong Palace",
     image: "../image/hotel-image/victoria-xiengthong-palace.jpg",
     type: "luangprabang",
+    location: "Kounxoau Rd, Ban Phonehueng, Luang Prabang, 01160, Laos",
+    star: 4,
+    price: 84,
+    amenities: [
+      {
+        name: "WIFI",
+        image: "image/icon/wi-fi.png",
+      },
+      {
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
+      },
+      {
+        name: "Parking",
+        image: "image/icon/parking.png",
+      },
+      {
+        name: "Airport Shuttle",
+        image: "image/icon/bus.png",
+      },
+      {
+        name: "Front desk 24 hour",
+        image: "image/icon/fornt-dest.png",
+      },
+      {
+        name: "Spa",
+        image: "image/icon/swimming-pool.png",
+      },
+    ],
     concept:
       "Situated in the heart of the ancient capital Luang Prabang, nestled beside the famous Wat Xiengthong, Victoria Xiengthong Palace is an exquisite blend of local cultural heritage and modern amenities. A royal and unique vacation awaits you, promising to bring many enticing experiences such as watching the sunset on a cruise, participating in the Alms giving ceremony, and exploring the traditional night market.",
   },
