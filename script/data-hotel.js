@@ -338,7 +338,7 @@ export const hotel = [
     type: "luangprabang",
     location: "Kounxoau Rd, Ban Phonehueng, Luang Prabang, 01160, Laos",
     star: 4,
-    price: 84,
+    price: 92,
     amenities: [
       {
         name: "WIFI",

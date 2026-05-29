@@ -37,7 +37,10 @@ function loadHotel(province) {
 
   displaySearch.innerText = "";
   container.innerHTML = html;
-  provinceName.innerHTML = province;
+  provinceName.innerHTML = province.replace(
+    province.slice(0, 1),
+    province.slice(0, 1).toUpperCase(),
+  );
 }
 
 document
