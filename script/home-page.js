@@ -1,4 +1,4 @@
-import { hotel } from "./data-hotel.js";
+import { hotel } from "../data/data-hotel.js";
 
 const container = document.querySelector(".silder-container");
 const widthBox = 400;

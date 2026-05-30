@@ -140,6 +140,8 @@ p {
   display: flex;
   align-items: end;
   padding-bottom: 20px;
+  justify-content: space-between;
+  position: relative;
 }
 
 .container-text-find-hotel {
@@ -158,6 +160,86 @@ p {
   font-family: "Sassy Frass", cursive;
   font-size: 38px;
   margin-right: 8px;
+}
+
+.option-box {
+  padding-right: 10%;
+}
+
+.change-currency {
+  border: none;
+  display: flex;
+  background-color: white;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition:
+    outline 0.2s,
+    background-color 0.2s;
+
+  animation: displayFirstLoad 0.8s ease-in-out forwards;
+}
+
+.currency-symbol {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff5100;
+  transition: color 0.2s;
+}
+
+.currency-name {
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.change-currency:hover {
+  background-color: #ff5100;
+
+  .currency-symbol {
+    color: white;
+  }
+
+  .currency-name {
+    color: white;
+  }
+}
+
+.tooltip-currency {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: -100px;
+  right: 10%;
+  border: 1px solid rgba(0, 0, 0, 0.58);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  z-index: 1;
+}
+
+.option-currency {
+  display: flex;
+  border: none;
+  background: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  justify-content: space-between;
+}
+
+.option-currency:hover {
+  color: #ff5100;
+  border-bottom: 0.5px solid #ff5100;
+  border-top: 0.5px solid #ff5100;
 }
 
 .container-find-hotel {
