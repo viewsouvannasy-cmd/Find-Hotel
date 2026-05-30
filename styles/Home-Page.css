@@ -42,6 +42,69 @@ p {
   }
 }
 
+@keyframes displayLoadForHotel {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes displayLoadWidth {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 1;
+    width: 100%;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes displayLoadOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes displayLoadFormTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes displayLoadleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 .container-background {
   background-color: #193c76;
   position: fixed;
@@ -179,9 +242,17 @@ p {
   font-weight: 520;
 }
 
+.hotel-name.first-load {
+  animation: displayLoadOpacity 0.5s ease-in-out forwards;
+}
+
 .container-star {
   display: flex;
   gap: 10px;
+}
+
+.container-star.first-load {
+  animation: displayLoadWidth 1s ease-in-out forwards;
 }
 
 .star-hotel {
@@ -206,6 +277,10 @@ p {
 .location-path {
   font-family: Gantari;
   color: #5e5e5e;
+}
+
+.location-path.first-load {
+  animation: displayLoadOpacity 0.5s ease-in-out forwards;
 }
 
 .container-amenities {
@@ -236,10 +311,18 @@ p {
   width: 20px;
 }
 
+.amenities-icon.first-load {
+  animation: displayLoadFormTop 1s ease-in-out forwards;
+}
+
 .amenities-name {
   margin-top: 7px;
   color: #5e5e5e;
   font-size: 12px;
+}
+
+.amenities-name.first-load {
+  animation: displayLoadOpacity 0.5s ease-in-out forwards;
 }
 
 .container-price {
@@ -253,14 +336,24 @@ p {
   font-weight: 520;
 }
 
+.box-price {
+  display: flex;
+}
+
 .price-hotel {
   font-weight: 520;
+  margin-right: 5px;
+}
+
+.price-hotel.first-load {
+  animation: displayLoadleft 0.5s ease-in-out;
 }
 
 .a-neight {
   font-size: 12px;
   color: #5e5e5e;
   font-weight: 400;
+  margin-top: 8px;
 }
 
 .container-button-see-more {
@@ -291,7 +384,7 @@ p {
 }
 
 .button-see-more:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5spx);
   color: white;
   background-color: #ff5100;
   border: none;

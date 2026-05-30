@@ -64,7 +64,7 @@ export const hotel = [
       },
       {
         name: "Front desk 24 hour",
-        image: "image/icon/fornt-desk.png",
+        image: "image/icon/fornt-dest.png",
       },
     ],
     type: "vientaine",
@@ -97,7 +97,7 @@ export const hotel = [
       },
       {
         name: "Front desk 24 hour",
-        image: "image/icon/fornt-desk.png",
+        image: "image/icon/fornt-dest.png",
       },
       {
         name: "Spa",
@@ -133,7 +133,7 @@ export const hotel = [
       },
       {
         name: "Front desk 24 hour",
-        image: "image/icon/fornt-desk.png",
+        image: "image/icon/fornt-dest.png",
       },
       {
         name: "Spa",
@@ -168,7 +168,7 @@ export const hotel = [
       },
       {
         name: "Front desk 24 hour",
-        image: "image/icon/fornt-desk.png",
+        image: "image/icon/fornt-dest.png",
       },
       {
         name: "Spa",
@@ -205,7 +205,7 @@ export const hotel = [
       },
       {
         name: "Front desk 24 hour",
-        image: "image/icon/fornt-desk.png",
+        image: "image/icon/fornt-dest.png",
       },
       {
         name: "Non-smoking",
@@ -342,8 +342,8 @@ export const hotel = [
         image: "image/icon/wi-fi.png",
       },
       {
-        name: "Front desk 24 hour",
-        image: "image/icon/fornt-dest.png",
+        name: "Air conditioning",
+        image: "image/icon/snow.png",
       },
       {
         name: "Pool",

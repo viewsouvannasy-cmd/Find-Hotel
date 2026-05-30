@@ -4,6 +4,7 @@ const container = document.querySelector(".silder-container");
 const widthBox = 400;
 let indexBox = 0;
 let isMove = false;
+let isDisplay = false;
 let maxBox;
 let currId = 0;
 
@@ -15,6 +16,7 @@ function loadHotel(province) {
     (hotel) => hotel.type === province.toLowerCase().replaceAll(" ", ""),
   );
   maxBox = provinceHotel.length;
+
   if (provinceHotel.length === 0) {
     provinceName.innerHTML = province;
     displaySearch.innerText = "No have data hotel information";
@@ -51,6 +53,7 @@ function moveNext() {
   if (isMove) {
     return;
   }
+  isMove = true;
 
   if (currId >= maxBox - 1) {
     document
@@ -64,9 +67,10 @@ function moveNext() {
       .querySelector(`.image-hotel-${currId}`)
       .classList.add("hightlight-hotel");
     container.style.transform = `translateY(-${indexBox * widthBox}px)`;
+
+    isMove = false;
     return;
   }
-  isMove = true;
 
   document
     .querySelector(`.image-hotel-${currId}`)
@@ -123,11 +127,13 @@ function moveBack() {
 const moveNextBtn = document.querySelector(".js-move-next");
 moveNextBtn.addEventListener("click", () => {
   moveNext();
+  displayHotelInformation();
 });
 
 const moveBackBtn = document.querySelector(".js-move-back");
 moveBackBtn.addEventListener("click", () => {
   moveBack();
+  displayHotelInformation();
 });
 
 const inputProvince = document.querySelector(".input-province");
@@ -142,3 +148,79 @@ inputProvince.addEventListener("keydown", (event) => {
     inputProvince.value = "";
   }
 });
+
+displayHotelInformation();
+function displayHotelInformation() {
+  if (isDisplay) {
+    return;
+  }
+  isDisplay = true;
+
+  const hotelName = document.querySelector(".js-hotel-name");
+  const containerStar = document.querySelector(".js-container-star");
+  const location = document.querySelector(".js-location-path");
+  const containerAmenities = document.querySelector(
+    ".js-container-detail-amenities",
+  );
+  const price = document.querySelector(".price-hotel");
+  containerAmenities.innerHTML = loadAmenities();
+
+  const amenitiesName = document.querySelectorAll(".amenities-name");
+  amenitiesName.forEach((item) => {
+    item.classList.remove("first-load");
+  });
+
+  const amenitiesIcon = document.querySelectorAll(".amenities-icon");
+  amenitiesIcon.forEach((item) => {
+    item.classList.remove("first-load");
+  });
+
+  hotelName.classList.remove("first-load");
+  containerStar.classList.remove("first-load");
+  location.classList.remove("first-load");
+  price.classList.remove("first-load");
+
+  requestAnimationFrame(() => {
+    hotelName.innerText = hotel[currId].name;
+    containerStar.innerHTML = loadStar();
+    location.innerText = hotel[currId].location;
+    price.innerText = `${hotel[currId].price} $`;
+
+    amenitiesName.forEach((item) => {
+      item.classList.add("first-load");
+    });
+    amenitiesIcon.forEach((item) => {
+      item.classList.add("first-load");
+    });
+    price.classList.add("first-load");
+    hotelName.classList.add("first-load");
+    containerStar.classList.add("first-load");
+    location.classList.add("first-load");
+  });
+  isDisplay = false;
+}
+
+function loadStar() {
+  let htmlStar = "";
+
+  for (let i = 0; i < hotel[currId].star; i++) {
+    htmlStar += `<img class="star-hotel" src="image/icon/star.png" />`;
+  }
+
+  return htmlStar;
+}
+
+function loadAmenities() {
+  let htmlAmenities = "";
+
+  hotel[currId].amenities.forEach((item) => {
+    htmlAmenities += `
+                <div class="amenities-box">
+                  <img class="amenities-icon" src="${item.image}" />
+                  <p class="amenities-name">${item.name}</p>
+                </div>
+              `;
+  });
+
+  return htmlAmenities;
+}
