@@ -1,4 +1,5 @@
 import { hotel } from "../data/data-hotel.js";
+import { calculateRate } from "../script/Unit/currency.js";
 
 const container = document.querySelector(".silder-container");
 const widthBox = 400;
@@ -150,7 +151,7 @@ inputProvince.addEventListener("keydown", (event) => {
 });
 
 displayHotelInformation();
-function displayHotelInformation() {
+export function displayHotelInformation() {
   if (isDisplay) {
     return;
   }
@@ -184,7 +185,7 @@ function displayHotelInformation() {
     hotelName.innerText = hotel[currId].name;
     containerStar.innerHTML = loadStar();
     location.innerText = hotel[currId].location;
-    price.innerText = `${hotel[currId].price} $`;
+    price.innerText = `${calculateRate(hotel[currId].price)}`;
 
     amenitiesName.forEach((item) => {
       item.classList.add("first-load");
