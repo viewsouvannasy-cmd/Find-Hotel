@@ -331,6 +331,10 @@ p {
   animation: displayLoadOpacity 0.5s ease-in-out forwards;
 }
 
+.container-star {
+  display: flex;
+}
+
 .box-star {
   display: flex;
   gap: 10px;

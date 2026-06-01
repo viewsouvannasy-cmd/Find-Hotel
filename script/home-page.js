@@ -9,7 +9,7 @@ let isDisplay = false;
 let maxBox;
 let currId = 0;
 
-loadHotel("vientaine");
+loadHotel("vientiane");
 function loadHotel(province) {
   const provinceName = document.querySelector(".province-name");
   const displaySearch = document.querySelector(".display-result-search");
