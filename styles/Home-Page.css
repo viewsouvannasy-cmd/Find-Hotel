@@ -288,7 +288,6 @@ p {
 }
 
 .conutry-name {
-  margin: 0;
   font-weight: 600;
   margin-bottom: 8px;
   margin-left: 10px;
@@ -332,12 +331,12 @@ p {
   animation: displayLoadOpacity 0.5s ease-in-out forwards;
 }
 
-.container-star {
+.box-star {
   display: flex;
   gap: 10px;
 }
 
-.container-star.first-load {
+.box-star.first-load {
   animation: displayLoadWidth 1s ease-in-out forwards;
 }
 
@@ -570,4 +569,121 @@ p {
 .move-next:hover,
 .move-back:hover {
   background-color: #ff5100;
+}
+
+.container-button-see-more-suppost {
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .main-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.363);
+  }
+
+  .container-find-hotel {
+    height: 100%;
+    width: 100%;
+  }
+
+  .container-select-province {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .right-section {
+    width: 100%;
+    height: 300px;
+    padding-left: 0px;
+    padding-right: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .silder-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0px);
+    gap: 100px;
+    align-items: center;
+  }
+
+  .find-hotel-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .province-name {
+    padding-left: 0px;
+  }
+
+  .conutry-name {
+    margin: 0px;
+    margin-left: 8px;
+    margin-top: 4px;
+  }
+
+  .box-selection-province {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-section {
+    width: 100%;
+    display: flex;
+    padding: 0;
+    height: 30%;
+  }
+
+  .container-location-hotel {
+    display: none;
+  }
+
+  .container-amenities {
+    display: none;
+  }
+
+  .hotel-name {
+    width: 95%;
+    padding-left: 2%;
+    font-size: 1.5em;
+  }
+
+  .container-star {
+    display: flex;
+  }
+
+  .box-star {
+    padding-left: 2%;
+  }
+
+  .container-price {
+    width: 95.5%;
+    padding-left: 2%;
+    margin-top: 30px;
+  }
+
+  .box-controls {
+    bottom: 20px;
+  }
+
+  .container-button-see-more {
+    margin-top: 0;
+    display: none;
+  }
+
+  .container-button-see-more-suppost {
+    margin-top: 30px;
+    display: flex;
+  }
 }

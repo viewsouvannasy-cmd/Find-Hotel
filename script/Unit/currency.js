@@ -1,5 +1,3 @@
-import { displayHotelInformation } from "../home-page.js";
-
 let currencyRate = JSON.parse(localStorage.getItem("currency"));
 
 if (!currencyRate) {

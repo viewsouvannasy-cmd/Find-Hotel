@@ -158,7 +158,7 @@ export function displayHotelInformation() {
   isDisplay = true;
 
   const hotelName = document.querySelector(".js-hotel-name");
-  const containerStar = document.querySelector(".js-container-star");
+  const containerStar = document.querySelector(".js-box-star");
   const location = document.querySelector(".js-location-path");
   const containerAmenities = document.querySelector(
     ".js-container-detail-amenities",
