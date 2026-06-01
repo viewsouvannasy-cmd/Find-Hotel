@@ -673,7 +673,7 @@ export const hotel = [
     amenities: [
       {
         name: "WIFI",
-        image: "image/icon/wi-if.png",
+        image: "image/icon/wi-fi.png",
       },
       {
         name: "Air conditioning",
@@ -689,7 +689,7 @@ export const hotel = [
       },
       {
         name: "Pool",
-        image: "image/icon/swimming.png",
+        image: "image/icon/swimming-pool.png",
       },
       {
         name: "Spa",

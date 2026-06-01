@@ -9,6 +9,8 @@ let isDisplay = false;
 let maxBox;
 let currId = 0;
 
+let currProvince;
+
 loadHotel("vientiane");
 function loadHotel(province) {
   const provinceName = document.querySelector(".province-name");
@@ -44,7 +46,9 @@ function loadHotel(province) {
     province.slice(0, 1),
     province.slice(0, 1).toUpperCase(),
   );
+  currProvince = provinceHotel;
 }
+console.log(currProvince);
 
 document
   .querySelector(`.image-hotel-${currId}`)
@@ -142,7 +146,11 @@ const inputProvince = document.querySelector(".input-province");
 inputProvince.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     const inputValue = inputProvince.value;
+    currProvince = hotel.filter(
+      (item) => item.type === inputValue.toLowerCase().replaceAll(" ", ""),
+    );
     loadHotel(inputValue);
+    displayHotelInformation();
     document
       .querySelector(`.image-hotel-${currId}`)
       .classList.add("hightlight-hotel");
@@ -182,10 +190,10 @@ export function displayHotelInformation() {
   price.classList.remove("first-load");
 
   requestAnimationFrame(() => {
-    hotelName.innerText = hotel[currId].name;
+    hotelName.innerText = currProvince[currId].name;
     containerStar.innerHTML = loadStar();
-    location.innerText = hotel[currId].location;
-    price.innerText = `${calculateRate(hotel[currId].price)}`;
+    location.innerText = currProvince[currId].location;
+    price.innerText = `${calculateRate(currProvince[currId].price)}`;
 
     amenitiesName.forEach((item) => {
       item.classList.add("first-load");
@@ -198,13 +206,16 @@ export function displayHotelInformation() {
     containerStar.classList.add("first-load");
     location.classList.add("first-load");
   });
-  isDisplay = false;
+
+  setTimeout(() => {
+    isDisplay = false;
+  }, 400);
 }
 
 function loadStar() {
   let htmlStar = "";
 
-  for (let i = 0; i < hotel[currId].star; i++) {
+  for (let i = 0; i < currProvince[currId].star; i++) {
     htmlStar += `<img class="star-hotel" src="image/icon/star.png" />`;
   }
 
@@ -214,7 +225,7 @@ function loadStar() {
 function loadAmenities() {
   let htmlAmenities = "";
 
-  hotel[currId].amenities.forEach((item) => {
+  currProvince[currId].amenities.forEach((item) => {
     htmlAmenities += `
                 <div class="amenities-box">
                   <img class="amenities-icon" src="${item.image}" />
