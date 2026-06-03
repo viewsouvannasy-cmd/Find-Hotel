@@ -48,7 +48,6 @@ function loadHotel(province) {
   );
   currProvince = provinceHotel;
 }
-console.log(currProvince);
 
 document
   .querySelector(`.image-hotel-${currId}`)

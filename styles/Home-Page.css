@@ -584,7 +584,7 @@ p {
   display: none;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   .main-container {
     display: flex;
     height: 100vh;
