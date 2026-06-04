@@ -13,6 +13,10 @@ let currProvince;
 
 loadHotel("vientiane");
 function loadHotel(province) {
+  const containerButton = document.querySelector(".container-button-see-more");
+  const containerButtonSP = document.querySelector(
+    ".container-button-see-more-suppost",
+  );
   const provinceName = document.querySelector(".province-name");
   const displaySearch = document.querySelector(".display-result-search");
   const provinceHotel = hotel.filter(
@@ -40,12 +44,18 @@ function loadHotel(province) {
         `;
   });
 
+  const linkProvince = ` <button class="button-see-more" id="${province}">see more</button>
+                    <p class="sub-below-button">click here to export more hotel!</p>
+                    `;
+  containerButton.innerHTML = linkProvince;
+  containerButtonSP.innerHTML = linkProvince;
   displaySearch.innerText = "";
   container.innerHTML = html;
   provinceName.innerHTML = province.replace(
     province.slice(0, 1),
     province.slice(0, 1).toUpperCase(),
   );
+
   currProvince = provinceHotel;
 }
 
@@ -148,6 +158,7 @@ inputProvince.addEventListener("keydown", (event) => {
     currProvince = hotel.filter(
       (item) => item.type === inputValue.toLowerCase().replaceAll(" ", ""),
     );
+
     loadHotel(inputValue);
     displayHotelInformation();
     document
@@ -235,3 +246,11 @@ function loadAmenities() {
 
   return htmlAmenities;
 }
+
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("button-see-more")) {
+    const provinceName = event.target.id;
+    const convertName = provinceName.toLowerCase().replaceAll(" ", "");
+    window.open(`${convertName}-page.html`, "_blank");
+  }
+});
