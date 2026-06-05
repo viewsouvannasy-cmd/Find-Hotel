@@ -204,6 +204,7 @@ p {
   background-color: white;
   border: 1.5px solid #ff5100;
   border-radius: 5px;
+  cursor: pointer;
   transition:
     background-color 0.2s,
     color 0.2s;
@@ -218,6 +219,7 @@ p {
   width: 100%;
   height: 500px;
   position: relative;
+  animation: displayLoadForHotel 0.8s ease-in-out;
 }
 
 .container-background-image img {
@@ -280,11 +282,76 @@ p {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.157);
   font-weight: bold;
   font-size: 18px;
+  cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .box-search button:hover {
   background-color: #ff5100b2;
+}
+
+.main-container {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.container-popular-destination {
+  height: 1000px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 40px;
+}
+
+.container-province-place {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  overflow: scroll;
+}
+.container-province-image {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.container-province-image img {
+  object-position: center;
+  border-radius: 10px;
+  object-fit: cover;
+  transition:
+    width 0.5s,
+    height 0.5s;
+}
+
+.container-province-image img:hover {
+  height: 280px;
+  width: 280px;
+}
+
+.container-intro-province {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  background-color: rgba(0, 0, 0, 0.407);
+}
+
+.container-intro-province h3 {
+  color: white;
+}
+
+.container-average-price {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  font-size: 13px;
 }
 
 @media (max-width: 600px) {
