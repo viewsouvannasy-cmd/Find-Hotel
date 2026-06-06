@@ -291,12 +291,12 @@ p {
 }
 
 .main-container {
+  height: 1000px;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .container-popular-destination {
-  height: 1000px;
   padding-left: 120px;
   padding-right: 120px;
   padding-top: 40px;
@@ -354,7 +354,131 @@ p {
   font-size: 13px;
 }
 
+.container-recommend-hotel {
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 40px;
+}
+
+.container-grid-hotel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+.container-image-hotel {
+  margin-top: 20px;
+  position: relative;
+  width: 1fr;
+  height: 300px;
+  box-shadow: 0 0 5px gray;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    box-shadow 0.2s,
+    width 0.2s,
+    height 0.2s;
+}
+
+.container-image-hotel:hover {
+  box-shadow: 0 0 15px gray;
+}
+
+.container-image-hotel img {
+  object-position: cover;
+  object-position: center;
+}
+
+.container-intro-hotel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: white;
+}
+
+.box-name-and-rate-hotel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hotel-name {
+  padding-left: 10px;
+}
+
+.hotel-rate {
+  font-style: light;
+  font-size: 13px;
+  padding-right: 10px;
+}
+
+.box-location-and-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.location-hotel {
+  width: 70%;
+  font-size: 12px;
+  font-style: light;
+  padding-left: 10px;
+}
+
+.box-price {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: end;
+  padding-right: 10px;
+}
+
+.price-hotel {
+  font-weight: bold;
+  background-color: #193c76;
+  color: white;
+  padding-right: 10px;
+  padding-left: 14px;
+}
+
+.per-night {
+  font-size: 12px;
+}
+
+@media (max-width: 1360px) {
+  .container-grid-hotel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .container-popular-destination {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .container-recommend-hotel {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 710px) {
+  .container-grid-hotel {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
+  .container-search {
+    width: 90%;
+  }
+
   .header-right-section {
     display: none;
   }
