@@ -105,6 +105,8 @@ p {
   }
 }
 
+/* header section*/
+
 .container-header {
   display: flex;
   width: 100%;
@@ -290,11 +292,15 @@ p {
   background-color: #ff5100b2;
 }
 
+/* main section*/
+
 .main-container {
-  height: 1000px;
+  height: 2000px;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0);
 }
+
+/* popular destinaiton section*/
 
 .container-popular-destination {
   padding-left: 120px;
@@ -354,6 +360,8 @@ p {
   font-size: 13px;
 }
 
+/* recommended section*/
+
 .container-recommend-hotel {
   padding-left: 120px;
   padding-right: 120px;
@@ -395,7 +403,6 @@ p {
   bottom: 0;
   left: 0;
   width: 100%;
-
   background-color: white;
 }
 
@@ -450,6 +457,133 @@ p {
   font-size: 12px;
 }
 
+.container-button-recommended-section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.button-see-more-recommended-section {
+  border: none;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid #193c76;
+  color: #193c76;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.button-see-more-recommended-section:hover {
+  background-color: #193c76;
+  color: white;
+}
+
+/* filter section */
+
+.container-filter-hotel-section {
+  margin-top: 40px;
+  padding-right: 120px;
+  padding-left: 120px;
+}
+
+.header-filter {
+  background-color: #193c76;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-filter h2 {
+  color: white;
+}
+
+.box-option-filter {
+  display: flex;
+  gap: 20px;
+}
+
+.option-filter-price {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.option-filter-price label {
+  color: white;
+}
+
+.input-price {
+  border: none;
+  width: 90px;
+  background-color: transparent;
+  color: white;
+  border-bottom: 2px solid white;
+  appearance: none;
+}
+
+.input-price:focus {
+  outline: none;
+}
+
+.input-price::placeholder {
+  color: lightgray;
+}
+
+.symbol-currnecy {
+  position: absolute;
+  right: 0;
+  color: white;
+}
+
+.option-filter-star {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 2px;
+  padding-right: 2px;
+  gap: 1px;
+  transition: background-color 0.2s;
+}
+
+.option-filter-star:hover {
+  background-color: #2253a1;
+}
+
+.number-of-star {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.option-filter-star img {
+  width: 15px;
+  height: 15px;
+}
+
+.button-filter-search {
+  color: white;
+  border: none;
+  background-color: #2253a1;
+  font-weight: bold;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.button-filter-search:hover {
+  background-color: #143261;
+}
+
 @media (max-width: 1360px) {
   .container-grid-hotel {
     grid-template-columns: 1fr 1fr;
@@ -465,6 +599,11 @@ p {
   .container-recommend-hotel {
     padding-right: 20px;
     padding-left: 20px;
+  }
+
+  .container-filter-hotel-section {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
