@@ -1,4 +1,4 @@
-const provinceData = [
+export const provinceData = [
   {
     name: "luangprabang",
     image: "image/image-province/luangprabang.jpg",
@@ -6,6 +6,18 @@ const provinceData = [
   {
     name: "vientiane",
     image: "image/image-province/vientiane.jpg",
+  },
+  {
+    name: "xaisomboun",
+    image: "image/image-province/xaisomboun.jpg",
+  },
+  {
+    name: "khammouane",
+    image: "image/image-province/khammouane.jpg",
+  },
+  {
+    name: "luangnamtha",
+    image: "image/image-province/luangnamtha.jpg",
   },
   {
     name: "champasak",
@@ -19,18 +31,12 @@ const provinceData = [
     name: "xiangkhouang",
     image: "image/image-province/xiangkhouang.jpg",
   },
-  {
-    name: "luangnamtha",
-    image: "image/image-province/luangnamtha.jpg",
-  },
+
   {
     name: "bokeo",
     image: "image/image-province/bokeo.jpg",
   },
-  {
-    name: "khammouane",
-    image: "image/image-province/khammouane.jpg",
-  },
+
   {
     name: "bolikhamxai",
     image: "image/image-province/bolikhamxai.jpg",
@@ -62,9 +68,5 @@ const provinceData = [
   {
     name: "sekong",
     image: "image/image-province/sekong.jpg",
-  },
-  {
-    name: "xaisomboun",
-    image: "image/image-province/xaisomboun.jpg",
   },
 ];

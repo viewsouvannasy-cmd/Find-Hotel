@@ -251,6 +251,6 @@ document.addEventListener("click", (event) => {
   if (event.target.classList.contains("button-see-more")) {
     const provinceName = event.target.id;
     const convertName = provinceName.toLowerCase().replaceAll(" ", "");
-    window.open(`${convertName}-page.html`, "_blank");
+    window.location.href = `province-detail-page.html?name=${convertName}`;
   }
 });

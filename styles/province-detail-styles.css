@@ -580,12 +580,50 @@ p {
   transition: background-color 0.2s;
 }
 
+.filter-hotel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
 .button-filter-search:hover {
   background-color: #143261;
 }
 
+.container-button-filter-section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.button-see-more-filter-section {
+  border: none;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid #193c76;
+  color: #193c76;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.button-see-more-filter-section:hover {
+  background-color: #193c76;
+  color: white;
+}
+
 @media (max-width: 1360px) {
   .container-grid-hotel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filter-hotel {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -609,6 +647,10 @@ p {
 
 @media (max-width: 710px) {
   .container-grid-hotel {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-hotel {
     grid-template-columns: 1fr;
   }
 }
