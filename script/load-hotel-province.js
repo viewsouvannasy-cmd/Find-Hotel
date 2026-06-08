@@ -4,7 +4,9 @@ import { calculateAveragePrice } from "../script/Unit/currency-detail.js";
 
 const params = new URLSearchParams(window.location.search);
 const provinceParam = params.get("name");
-let numberHotel = 6;
+
+let endingIndex = 6;
+let endingIndexFiltre = 6;
 
 generateHMTL();
 function generateHMTL() {
@@ -39,7 +41,7 @@ function generateHMTL() {
           <h2>Recommmended Hotel</h2>
           <div class="container-grid-hotel">
            
-          ${loadHotel(0, numberHotel)}
+          ${loadHotel(0, endingIndex)}
            
         </div>
         <div class="container-button-recommended-section">
@@ -59,54 +61,25 @@ function generateHMTL() {
                 <div class="symbol-currnecy">$</div>
               </div>
               <div class="option-filter-star">
+         
                 <p class="number-of-star">3</p>
                 <img src="image/icon/white-star.png" />
+                <div class="tooltip-star">
+                <button id="star-1" class="button-star">1</button>
+                <button id="star-2" class="button-star">2</button>
+                <button id="star-4" class="button-star">4</button>
+                <button id="star-5" class="button-star">5</button>
+                </div>
+              
               </div>
+              
               <button class="button-filter-search">Search</button>
             </div>
           </div>
           <div class="filter-hotel">
-            <div class="container-image-hotel">
-              <img src="image/hotel-image/COSI-Vientiane-Nam-Phu.jpg" />
-              <div class="container-intro-hotel">
-                <div class="box-name-and-rate-hotel">
-                  <h3 class="hotel-name">COSI Vientiane Nam Phu</h3>
-                  <p class="hotel-rate">5/5</p>
-                </div>
-                <div class="box-location-and-price">
-                  <p class="location-hotel">
-                    Nam Phu Square Setthathirath Road, Ban Xieng Yeun,
-                    Vientiane, 01000, Laos
-                  </p>
-                  <div class="box-price">
-                    <p class="price-hotel">79 $</p>
-                    <p class="per-night">a night</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container-image-hotel">
-              <img src="image/hotel-image/COSI-Vientiane-Nam-Phu.jpg" />
-              <div class="container-intro-hotel">
-                <div class="box-name-and-rate-hotel">
-                  <h3 class="hotel-name">COSI Vientiane Nam Phu</h3>
-                  <p class="hotel-rate">5/5</p>
-                </div>
-                <div class="box-location-and-price">
-                  <p class="location-hotel">
-                    Nam Phu Square Setthathirath Road, Ban Xieng Yeun,
-                    Vientiane, 01000, Laos
-                  </p>
-                  <div class="box-price">
-                    <p class="price-hotel">79 $</p>
-                    <p class="per-night">a night</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             
+            ${loadFitlerHotel(3, 0, 0, endingIndexFiltre)}
+
           </div>
           <div class="container-button-filter-section">
             <button class="button-see-more-filter-section">See more</button>
@@ -145,14 +118,21 @@ function loadDestination() {
   return html;
 }
 
-function loadHotel(start, numHotel) {
+function loadHotel(start, endingIndex) {
   let html = "";
 
   const filterHotel = hotel.filter((hotel) => hotel.type === provinceParam);
   const afterSortHotel = sortHotel(filterHotel);
   let count = start;
 
-  const cutHotel = afterSortHotel.slice(start, numHotel);
+  const cutHotel = afterSortHotel.slice(start, endingIndex);
+
+  if (cutHotel.length === 0) {
+    const container = document.querySelector(
+      ".container-button-recommended-section",
+    );
+    container.innerHTML = `<p class="not-found">data not founded</p>`;
+  }
 
   cutHotel.forEach((hotel) => {
     html += `<div class="container-image-hotel">
@@ -194,13 +174,119 @@ function sortHotel(hotelDetail) {
   return hotelDetail.reverse();
 }
 
+function loadFitlerHotel(star, price, starIndex, endingIndexFiltre) {
+  let htmlFilter = "";
+  const filterHotel = hotel.filter((hotel) => hotel.type === provinceParam);
+
+  const filterStar = filterHotel.filter((hotel) => hotel.star === star);
+  let filterPrice;
+  if (price > 0) {
+    filterPrice = filterStar.filter((hotel) => hotel.price <= price + 15);
+  }
+
+  const filDone = !filterPrice ? filterStar : filterPrice;
+
+  const cutHotel = filDone.slice(starIndex, endingIndexFiltre);
+
+  if (cutHotel.length === 0) {
+    const container = document.querySelector(
+      ".container-button-filter-section",
+    );
+    container.innerHTML = `<p class="not-found">data not founded</p>`;
+  }
+
+  cutHotel.forEach((hotel) => {
+    htmlFilter += `<div class="container-image-hotel">
+              <img src="${hotel.image}" />
+              <div class="container-intro-hotel">
+                <div class="box-name-and-rate-hotel">
+                  <h3 class="hotel-name">${hotel.name}</h3>
+                  <p class="hotel-rate">${hotel.star}/5</p>
+                </div>
+                <div class="box-location-and-price">
+                  <p class="location-hotel">
+                    ${hotel.location}
+                  </p>
+                  <div class="box-price">
+                    <p class="price-hotel">${hotel.price} $</p>
+                    <p class="per-night">a night</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+  });
+  return htmlFilter;
+}
+
+function sortStar(choiseStar) {
+  const star = [1, 2, 3, 4, 5];
+  star.splice(choiseStar - 1, 1);
+
+  let html = "";
+
+  star.forEach((item) => {
+    html += `<button id="star-${item}" class="button-star">${item}</button>`;
+  });
+
+  tooltipStarBtn.innerHTML = html;
+}
+
+const containerFilterHotel = document.querySelector(".filter-hotel");
+
 const recommendedBtn = document.querySelector(
   ".button-see-more-recommended-section",
 );
+const filterBtn = document.querySelector(".button-see-more-filter-section");
+const changeStarBtn = document.querySelector(".option-filter-star");
+const tooltipStarBtn = document.querySelector(".tooltip-star");
+const filterSearchBtn = document.querySelector(".button-filter-search");
+
 recommendedBtn.addEventListener("click", () => {
   const container = document.querySelector(".container-grid-hotel");
-  const start = numberHotel;
-  numberHotel += 6;
+  const start = endingIndex;
+  endingIndex += 6;
 
-  container.innerHTML += loadHotel(start, numberHotel);
+  container.innerHTML += loadHotel(start, endingIndex);
+});
+
+changeStarBtn.addEventListener("click", () => {
+  tooltipStarBtn.classList.toggle("show");
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("button-star")) {
+    const currStar = document.querySelector(".number-of-star");
+    const id = event.target.id.replace("star-", "");
+    const temp = currStar.innerText;
+    sortStar(CustomElementRegistry.innerText);
+    currStar.innerText = id;
+    event.target.innerText = temp;
+  }
+});
+
+filterSearchBtn.addEventListener("click", () => {
+  const currStar = document.querySelector(".number-of-star");
+  const star = Number(currStar.innerText);
+  const inputPrice = document.querySelector(".input-price");
+  const inputValue = Number(inputPrice.value);
+  const html = loadFitlerHotel(star, inputValue, 0, endingIndexFiltre);
+  containerFilterHotel.innerHTML = html;
+});
+
+filterBtn.addEventListener("click", () => {
+  const currStar = document.querySelector(".number-of-star");
+  const star = Number(currStar.innerText);
+  const inputPrice = document.querySelector(".input-price");
+  const inputValue = Number(inputPrice.value);
+  const html = loadFitlerHotel(star, inputValue, 0, endingIndexFiltre);
+  const start = endingIndexFiltre;
+  endingIndexFiltre += 6;
+
+  containerFilterHotel.innerHTML += loadFitlerHotel(
+    star,
+    inputValue,
+    start,
+    endingIndexFiltre,
+  );
 });
