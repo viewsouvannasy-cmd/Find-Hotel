@@ -19,7 +19,7 @@ function generateHMTL() {
   const provinceImage = loadProvinceImage();
 
   const html = `
-      <img src="${provinceImage[0].image}" />
+      <img class="background-image" src="${provinceImage[0].image}" />
       <div class="container-search">
         <h1>${provinceName}</h1>
         <p>find the best place to stay for you</p>
@@ -78,11 +78,12 @@ function generateHMTL() {
           </div>
           <div class="filter-hotel">
             
-            ${loadFitlerHotel(3, 0, 0, endingIndexFiltre)}
+            ${loadFilterHotel(3, 0, 0, endingIndexFiltre)}
 
           </div>
           <div class="container-button-filter-section">
             <button class="button-see-more-filter-section">See more</button>
+            <p class="not-found">data not founded</p>
           </div>
         </div>
       </div>`;
@@ -174,7 +175,10 @@ function sortHotel(hotelDetail) {
   return hotelDetail.reverse();
 }
 
-function loadFitlerHotel(star, price, starIndex, endingIndexFiltre) {
+const filterBtn = document.querySelector(".button-see-more-filter-section");
+const notFound = document.querySelector(".not-found");
+
+function loadFilterHotel(star, price, starIndex, endingIndexFiltre) {
   let htmlFilter = "";
   const filterHotel = hotel.filter((hotel) => hotel.type === provinceParam);
 
@@ -189,10 +193,8 @@ function loadFitlerHotel(star, price, starIndex, endingIndexFiltre) {
   const cutHotel = filDone.slice(starIndex, endingIndexFiltre);
 
   if (cutHotel.length === 0) {
-    const container = document.querySelector(
-      ".container-button-filter-section",
-    );
-    container.innerHTML = `<p class="not-found">data not founded</p>`;
+    filterBtn.style.display = "none";
+    notFound.style.display = "flex";
   }
 
   cutHotel.forEach((hotel) => {
@@ -237,7 +239,6 @@ const containerFilterHotel = document.querySelector(".filter-hotel");
 const recommendedBtn = document.querySelector(
   ".button-see-more-recommended-section",
 );
-const filterBtn = document.querySelector(".button-see-more-filter-section");
 const changeStarBtn = document.querySelector(".option-filter-star");
 const tooltipStarBtn = document.querySelector(".tooltip-star");
 const filterSearchBtn = document.querySelector(".button-filter-search");
@@ -259,7 +260,7 @@ document.addEventListener("click", (event) => {
     const currStar = document.querySelector(".number-of-star");
     const id = event.target.id.replace("star-", "");
     const temp = currStar.innerText;
-    sortStar(CustomElementRegistry.innerText);
+    sortStar(Number(id));
     currStar.innerText = id;
     event.target.innerText = temp;
   }
@@ -270,8 +271,12 @@ filterSearchBtn.addEventListener("click", () => {
   const star = Number(currStar.innerText);
   const inputPrice = document.querySelector(".input-price");
   const inputValue = Number(inputPrice.value);
-  const html = loadFitlerHotel(star, inputValue, 0, endingIndexFiltre);
+  const html = loadFilterHotel(star, inputValue, 0, endingIndexFiltre);
   containerFilterHotel.innerHTML = html;
+  if (filterBtn.style.display === "none") {
+    notFound.style.display = "none";
+    filterBtn.style.display = "flex";
+  }
 });
 
 filterBtn.addEventListener("click", () => {
@@ -279,11 +284,10 @@ filterBtn.addEventListener("click", () => {
   const star = Number(currStar.innerText);
   const inputPrice = document.querySelector(".input-price");
   const inputValue = Number(inputPrice.value);
-  const html = loadFitlerHotel(star, inputValue, 0, endingIndexFiltre);
   const start = endingIndexFiltre;
   endingIndexFiltre += 6;
 
-  containerFilterHotel.innerHTML += loadFitlerHotel(
+  containerFilterHotel.innerHTML += loadFilterHotel(
     star,
     inputValue,
     start,

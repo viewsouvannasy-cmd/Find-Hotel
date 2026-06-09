@@ -487,6 +487,7 @@ p {
 .not-found {
   color: #193c76;
   font-size: 15px;
+  display: none;
 }
 
 /* filter section */
