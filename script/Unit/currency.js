@@ -1,33 +1,4 @@
-let currencyRate = JSON.parse(localStorage.getItem("currency"));
-
-if (!currencyRate) {
-  currencyRate = [
-    {
-      symbol: "$",
-      name: "usd",
-      rate: 1,
-      active: true,
-    },
-    {
-      symbol: "₭",
-      name: "kip",
-      rate: 21000,
-      active: false,
-    },
-    {
-      symbol: "฿",
-      name: "thb",
-      rate: 32,
-      active: false,
-    },
-    {
-      symbol: "￥",
-      name: "cny",
-      rate: 6,
-      active: false,
-    },
-  ];
-}
+import { currencyRate } from "./currency-data.js";
 
 const tooltipCurrency = document.querySelector(".tooltip-currency");
 const currencySymbol = document.querySelector(".currency-symbol");
@@ -74,9 +45,10 @@ tooltipCurrency.querySelectorAll(".option-currency").forEach((button) => {
   });
 });
 
-function saveCurrency() {
+export function saveCurrency() {
   localStorage.setItem("currency", JSON.stringify(currencyRate));
 }
+
 export function calculateRate(amount) {
   const isRate = currencyRate.filter((item) => item.active === true);
 

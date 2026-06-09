@@ -1,6 +1,13 @@
 import { hotel } from "../data/data-hotel.js";
 import { provinceData } from "../data/data-province.js";
-import { calculateAveragePrice } from "../script/Unit/currency-detail.js";
+import {
+  calculateAveragePrice,
+  loadCurrencyTooltip,
+  calculateRate,
+  changeCurrency,
+} from "../script/Unit/currency-detail.js";
+
+loadCurrencyTooltip();
 
 const params = new URLSearchParams(window.location.search);
 const provinceParam = params.get("name");
@@ -8,9 +15,10 @@ const provinceParam = params.get("name");
 let endingIndex = 6;
 let endingIndexFiltre = 6;
 
+const container = document.querySelector(".container-background-image");
+
 generateHMTL();
 function generateHMTL() {
-  const container = document.querySelector(".container-background-image");
   const provinceName = provinceParam.replace(
     provinceParam.slice(0, 1),
     provinceParam.slice(0, 1).toLocaleUpperCase(),
@@ -110,7 +118,7 @@ function loadDestination() {
                     <h3>${province.name}</h3>
                     <div class="container-average-price">
                         <p>average price</p>
-                        <p class="average-price">${calculateAveragePrice(province.name)}$/night</p>
+                        <p class="average-price">$/night</p>
                     </div>
                 </div>
             </div>`;
@@ -136,7 +144,7 @@ function loadHotel(start, endingIndex) {
   }
 
   cutHotel.forEach((hotel) => {
-    html += `<div class="container-image-hotel">
+    html += `<div class="container-image-hotel" data-name-hotel="${hotel.name}">
               <img src="${hotel.image}" />
               <div class="container-intro-hotel">
                 <div class="box-name-and-rate-hotel">
@@ -148,7 +156,7 @@ function loadHotel(start, endingIndex) {
                     ${hotel.location}
                   </p>
                   <div class="box-price">
-                    <p class="price-hotel">${hotel.price} $</p>
+                    <p class="price-hotel">${calculateRate(hotel.price)}</p>
                     <p class="per-night">a night</p>
                   </div>
                 </div>
@@ -198,7 +206,7 @@ function loadFilterHotel(star, price, starIndex, endingIndexFiltre) {
   }
 
   cutHotel.forEach((hotel) => {
-    htmlFilter += `<div class="container-image-hotel">
+    htmlFilter += `<div class="container-image-hotel" data-name-hotel="${hotel.name}">
               <img src="${hotel.image}" />
               <div class="container-intro-hotel">
                 <div class="box-name-and-rate-hotel">
@@ -210,7 +218,7 @@ function loadFilterHotel(star, price, starIndex, endingIndexFiltre) {
                     ${hotel.location}
                   </p>
                   <div class="box-price">
-                    <p class="price-hotel">${hotel.price} $</p>
+                    <p class="price-hotel">${calculateRate(hotel.price)}</p>
                     <p class="per-night">a night</p>
                   </div>
                 </div>
@@ -293,4 +301,27 @@ filterBtn.addEventListener("click", () => {
     start,
     endingIndexFiltre,
   );
+});
+
+const buttonCurrencyMain = document.querySelector(".main-button-currency");
+const tooltipCurrency = document.querySelector(".tooltip-currency");
+
+buttonCurrencyMain.addEventListener("click", () => {
+  tooltipCurrency.classList.toggle("show");
+});
+
+const buttonCurrency = document.querySelectorAll(".button-currency");
+buttonCurrency.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    changeCurrency(btn.innerText.toLowerCase());
+    tooltipCurrency.classList.toggle("show");
+    location.reload();
+  });
+});
+
+container.querySelectorAll(".container-image-hotel").forEach((item) => {
+  item.addEventListener("click", () => {
+    const name = item.dataset.nameHotel;
+    console.log(name);
+  });
 });

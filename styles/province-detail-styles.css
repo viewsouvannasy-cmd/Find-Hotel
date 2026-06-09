@@ -180,13 +180,60 @@ p {
 .currency-box {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.main-button-currency {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 5px;
+  background-color: white;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.main-button-currency:hover {
+  background-color: rgb(229, 229, 229);
+}
+
+.flag-country-main {
+  width: 18px;
+  margin-right: 10px;
+}
+
+.currency-name-main {
+  font-size: 14px;
+}
+
+.tooltip-currency {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  display: none;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.424);
+  z-index: 1;
+  border-radius: 3px;
+  flex-direction: column;
+}
+
+.tooltip-currency.show {
+  display: flex;
+}
+
+.button-currency {
+  display: flex;
+  align-items: center;
   padding: 5px;
   cursor: pointer;
+  border: none;
+  background-color: white;
   transition: background-color 0.2s;
 }
 
-.currency-box:hover {
-  background-color: rgb(242, 242, 242);
+.button-currency:hover {
+  background-color: rgb(229, 229, 229);
 }
 
 .flag-country {
