@@ -285,6 +285,7 @@ p {
   display: flex;
   flex-direction: column;
   padding-left: 35px;
+  min-width: 0;
 }
 
 .conutry-name {
@@ -323,8 +324,17 @@ p {
   animation: horizontal-shake 0.4s ease-in-out;
 }
 
+.box-name-hotel {
+  display: flex;
+  min-width: 0;
+}
+
 .hotel-name {
   font-weight: 520;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .hotel-name.first-load {
@@ -658,7 +668,6 @@ p {
   }
 
   .hotel-name {
-    width: 95%;
     padding-left: 2%;
     font-size: 1.5em;
   }

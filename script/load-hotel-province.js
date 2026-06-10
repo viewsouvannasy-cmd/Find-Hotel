@@ -14,10 +14,9 @@ const provinceParam = params.get("name");
 
 let endingIndex = 6;
 let endingIndexFiltre = 6;
-
 const container = document.querySelector(".container-background-image");
-
 generateHMTL();
+
 function generateHMTL() {
   const provinceName = provinceParam.replace(
     provinceParam.slice(0, 1),
@@ -112,7 +111,7 @@ function loadDestination() {
 
   filterProvince.forEach((province) => {
     html += ` 
-            <div class="container-province-image">
+            <div class="container-province-image" data-name-province="${province.name}">
                 <img src="${province.image}" />
                 <div class="container-intro-province">
                     <h3>${province.name}</h3>
@@ -135,13 +134,6 @@ function loadHotel(start, endingIndex) {
   let count = start;
 
   const cutHotel = afterSortHotel.slice(start, endingIndex);
-
-  if (cutHotel.length === 0) {
-    const container = document.querySelector(
-      ".container-button-recommended-section",
-    );
-    container.innerHTML = `<p class="not-found">data not founded</p>`;
-  }
 
   cutHotel.forEach((hotel) => {
     html += `<div class="container-image-hotel" data-name-hotel="${hotel.name}">
@@ -183,9 +175,6 @@ function sortHotel(hotelDetail) {
   return hotelDetail.reverse();
 }
 
-const filterBtn = document.querySelector(".button-see-more-filter-section");
-const notFound = document.querySelector(".not-found");
-
 function loadFilterHotel(star, price, starIndex, endingIndexFiltre) {
   let htmlFilter = "";
   const filterHotel = hotel.filter((hotel) => hotel.type === provinceParam);
@@ -199,11 +188,6 @@ function loadFilterHotel(star, price, starIndex, endingIndexFiltre) {
   const filDone = !filterPrice ? filterStar : filterPrice;
 
   const cutHotel = filDone.slice(starIndex, endingIndexFiltre);
-
-  if (cutHotel.length === 0) {
-    filterBtn.style.display = "none";
-    notFound.style.display = "flex";
-  }
 
   cutHotel.forEach((hotel) => {
     htmlFilter += `<div class="container-image-hotel" data-name-hotel="${hotel.name}">
@@ -243,13 +227,14 @@ function sortStar(choiseStar) {
 }
 
 const containerFilterHotel = document.querySelector(".filter-hotel");
-
 const recommendedBtn = document.querySelector(
   ".button-see-more-recommended-section",
 );
 const changeStarBtn = document.querySelector(".option-filter-star");
 const tooltipStarBtn = document.querySelector(".tooltip-star");
 const filterSearchBtn = document.querySelector(".button-filter-search");
+const filterBtn = document.querySelector(".button-see-more-filter-section");
+const notFound = document.querySelector(".not-found");
 
 recommendedBtn.addEventListener("click", () => {
   const container = document.querySelector(".container-grid-hotel");
@@ -324,4 +309,16 @@ container.querySelectorAll(".container-image-hotel").forEach((item) => {
     const name = item.dataset.nameHotel;
     console.log(name);
   });
+});
+
+const containerDestination = document.querySelector(
+  ".container-province-place",
+);
+
+containerDestination.addEventListener("click", (event) => {
+  const item = event.target.closest(".container-province-image");
+  if (!item) return;
+
+  const name = item.dataset.nameProvince;
+  window.location.href = `province-detail-page.html?name=${name}`;
 });
