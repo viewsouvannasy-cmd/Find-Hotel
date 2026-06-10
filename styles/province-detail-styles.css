@@ -129,6 +129,11 @@ p {
   margin-right: 20px;
 
   animation: displayLoadOpacity 0.8s ease-in-out;
+  cursor: pointer;
+}
+
+.brand-name-text a {
+  text-decoration: none;
 }
 
 .hightlight-h {
@@ -460,7 +465,11 @@ p {
 }
 
 .hotel-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   padding-left: 10px;
+  width: 80%;
 }
 
 .hotel-rate {
@@ -477,9 +486,12 @@ p {
 }
 
 .location-hotel {
-  width: 70%;
+  width: 60%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   font-size: 12px;
-  font-style: light;
   padding-left: 10px;
 }
 

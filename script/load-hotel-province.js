@@ -11,6 +11,8 @@ loadCurrencyTooltip();
 
 const params = new URLSearchParams(window.location.search);
 const provinceParam = params.get("name");
+const titleProvincePage = document.querySelector("title");
+titleProvincePage.innerText = `Find Hotel ${provinceParam}`;
 
 let endingIndex = 6;
 let endingIndexFiltre = 6;
@@ -117,7 +119,7 @@ function loadDestination() {
                     <h3>${province.name}</h3>
                     <div class="container-average-price">
                         <p>average price</p>
-                        <p class="average-price">$/night</p>
+                        <p class="average-price">$${calculateAveragePrice(province.name)}/night</p>
                     </div>
                 </div>
             </div>`;
@@ -235,13 +237,15 @@ const tooltipStarBtn = document.querySelector(".tooltip-star");
 const filterSearchBtn = document.querySelector(".button-filter-search");
 const filterBtn = document.querySelector(".button-see-more-filter-section");
 const notFound = document.querySelector(".not-found");
+const containerGridHotel = document.querySelector(".container-grid-hotel");
+const buttonCurrencyMain = document.querySelector(".main-button-currency");
+const tooltipCurrency = document.querySelector(".tooltip-currency");
 
 recommendedBtn.addEventListener("click", () => {
-  const container = document.querySelector(".container-grid-hotel");
   const start = endingIndex;
   endingIndex += 6;
 
-  container.innerHTML += loadHotel(start, endingIndex);
+  containerGridHotel.innerHTML += loadHotel(start, endingIndex);
 });
 
 changeStarBtn.addEventListener("click", () => {
@@ -288,9 +292,6 @@ filterBtn.addEventListener("click", () => {
   );
 });
 
-const buttonCurrencyMain = document.querySelector(".main-button-currency");
-const tooltipCurrency = document.querySelector(".tooltip-currency");
-
 buttonCurrencyMain.addEventListener("click", () => {
   tooltipCurrency.classList.toggle("show");
 });
@@ -304,12 +305,14 @@ buttonCurrency.forEach((btn) => {
   });
 });
 
-container.querySelectorAll(".container-image-hotel").forEach((item) => {
-  item.addEventListener("click", () => {
-    const name = item.dataset.nameHotel;
-    console.log(name);
+containerGridHotel
+  .querySelectorAll(".container-image-hotel")
+  .forEach((item) => {
+    item.addEventListener("click", () => {
+      const name = item.dataset.nameHotel;
+      window.location.href = `hotel-detail.html?name=${name}`;
+    });
   });
-});
 
 const containerDestination = document.querySelector(
   ".container-province-place",
