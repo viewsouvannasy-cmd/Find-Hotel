@@ -134,6 +134,7 @@ p {
 
 .brand-name-text a {
   text-decoration: none;
+  color: black;
 }
 
 .hightlight-h {
@@ -498,7 +499,7 @@ p {
 .box-price {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 40%;
   align-items: end;
   padding-right: 10px;
 }
@@ -714,6 +715,117 @@ p {
   color: white;
 }
 
+.container-footer {
+  width: 100%;
+  padding-top: 50px;
+  border: 1px solid black;
+  background: linear-gradient(to top, #2e71dc 10%, #193c76 90%);
+  margin-top: 100px;
+}
+.container-footer h3 {
+  padding-left: 50px;
+  color: white;
+  font-size: 24px;
+}
+
+.container-left-and-right-section {
+  display: flex;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.container-left-and-right-section p {
+  color: white;
+  font-weight: 200;
+  width: 60%;
+}
+
+.footer-left-section {
+  width: 50%;
+  padding-left: 50px;
+}
+
+.container-contact {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.container-contact img {
+  width: 23px;
+  cursor: pointer;
+}
+
+.link-to-top {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  width: 150px;
+}
+
+.back-to-top {
+  margin-top: 15px;
+  background-color: transparent;
+  border: none;
+  border: 1px solid white;
+  padding: 15px 24px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.back-to-top img {
+  transform: translateY(0px);
+  transition: transform 0.2s;
+  width: 20px;
+}
+
+.link-to-top:hover {
+  .back-to-top img {
+    transform: translateY(-5px);
+  }
+}
+
+.footer-right-section {
+  width: 50%;
+  height: 100%;
+  padding-right: 50px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.container-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.column h5 {
+  color: white;
+  font-weight: 550;
+  padding-left: 9px;
+}
+
+.container-bottom-footer {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 10px;
+  padding: 10px 0px;
+  border-top: 1px solid black;
+}
+
 @media (max-width: 1360px) {
   .container-grid-hotel {
     grid-template-columns: 1fr 1fr;
@@ -738,6 +850,16 @@ p {
   .container-filter-hotel-section {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+@media (max-width: 830px) {
+  .footer-right-section {
+    display: none;
+  }
+
+  .footer-left-section {
+    width: 100%;
   }
 }
 

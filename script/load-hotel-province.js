@@ -16,7 +16,9 @@ titleProvincePage.innerText = `Find Hotel ${provinceParam}`;
 
 let endingIndex = 6;
 let endingIndexFiltre = 6;
+
 const container = document.querySelector(".container-background-image");
+
 generateHMTL();
 
 function generateHMTL() {
@@ -95,7 +97,11 @@ function generateHMTL() {
             <p class="not-found">data not founded</p>
           </div>
         </div>
-      </div>`;
+      </div>
+      
+      ${loadFooterSection()}
+      
+      `;
 
   container.innerHTML = html;
 }
@@ -213,6 +219,60 @@ function loadFilterHotel(star, price, starIndex, endingIndexFiltre) {
           `;
   });
   return htmlFilter;
+}
+
+function loadFooterSection() {
+  const html = `<footer class="container-footer">
+  <h3>find Hotel</h3>
+  <div class="container-left-and-right-section">
+    <div class="footer-left-section">
+    <p>we’re happy that you’re trust our  service we hold you being happy happy</p>
+    <div class="container-contact">
+      <img src="image/icon/facebook.png">
+      <img src="image/icon/instagram.png">
+      <img src="image/icon/email.png">
+      <img src="image/icon/whatsapp.png">
+    </div>
+     <a href="#header-section" class="link-to-top">
+    <button class="back-to-top">
+      <img src="image/icon/down-arrow.png">
+      Back to top
+      </button>
+   </a>
+    </div>
+  <div class="footer-right-section">
+    <div class="container-column">
+      <div class="column">
+        <h5>Company</h5>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+      </div>
+      <div class="column">
+        <h5>Products</h5>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+      </div>
+      <div class="column">
+        <h5>Support</h5>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+        <p>lorem sole</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-bottom-footer">
+  2026 findHotel. All right reserved.
+  </div>
+  </footer>`;
+  return html;
 }
 
 function sortStar(choiseStar) {
