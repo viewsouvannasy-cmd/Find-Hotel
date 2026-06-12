@@ -33,10 +33,29 @@ function generateHMTL() {
       <img class="background-image" src="${provinceImage[0].image}" />
       <div class="container-search">
         <h1>${provinceName}</h1>
-        <p>find the best place to stay for you</p>
-        <div class="box-search">
-          <input placeholder="Search the place" />
-          <button>Go</button>
+        <p class="sub-title-box-search">find the best place to stay for you</p>
+        <div class="main-box-search">
+          <div class="box-search">
+            <div class="box-search-hotel-input">
+              <p class="sub-text-box-search">where do you want to stay?</p>
+              <input class="search-hotel-input" placeholder="Enter the place or hotel" />
+            </div>
+          <div class="box-check-in">
+            <p class="sub-text-box-search">check in</p>
+            <input class="check-in" type="date">
+          </div>
+          <div class="box-check-out">
+            <p class="sub-text-box-search">check out</p>
+            <input class="check-out" type="date">
+          </div>
+          <div class="box-guest-and-room">
+            <p class="sub-text-box-search">guests and rooms</p>
+              <button class="box-select-number">
+                1 adults,1 room
+              </button>
+          </div>
+        </div>
+          <button class="button-search-to">Search</button>
         </div>
       </div>
       <div class="main-container">
@@ -57,7 +76,7 @@ function generateHMTL() {
         </div>
         <div class="container-button-recommended-section">
             <button class="button-see-more-recommended-section">
-              See more
+              View more
             </button>
         </div>
         </div>
@@ -87,14 +106,16 @@ function generateHMTL() {
               <button class="button-filter-search">Search</button>
             </div>
           </div>
+          <div class="container-filter-hotel-and-button">
           <div class="filter-hotel">
             
             ${loadFilterHotel(3, 0, 0, endingIndexFiltre)}
 
           </div>
           <div class="container-button-filter-section">
-            <button class="button-see-more-filter-section">See more</button>
+            <button class="button-see-more-filter-section">View more</button>
             <p class="not-found">data not founded</p>
+          </div>
           </div>
         </div>
       </div>
