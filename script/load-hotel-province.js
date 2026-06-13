@@ -40,14 +40,17 @@ function generateHMTL() {
               <p class="sub-text-box-search">where do you want to stay?</p>
               <input class="search-hotel-input" placeholder="Enter the place or hotel" />
             </div>
-          <div class="box-check-in">
-            <p class="sub-text-box-search">check in</p>
-            <input class="check-in" type="date">
-          </div>
-          <div class="box-check-out">
-            <p class="sub-text-box-search">check out</p>
-            <input class="check-out" type="date">
-          </div>
+            <div class="container-check-in-out">
+              <div class="box-check-in">
+                <p class="sub-text-box-search">check in</p>
+                <input class="check-in" type="date">
+              </div>
+              <div class="box-check-out">
+                <p class="sub-text-box-search">check out</p>
+                <input class="check-out" type="date">
+              </div>
+            </div>
+
           <div class="box-guest-and-room">
             <p class="sub-text-box-search">guests and rooms</p>
               <button class="box-select-number">
@@ -58,6 +61,58 @@ function generateHMTL() {
           <button class="button-search-to">Search</button>
         </div>
       </div>
+          <div class="tooltip-guest-and-room">
+                <div class="box-adults">
+                  <div class="box-text-adults">
+                    <p>Adults</p>
+                    <span>18+ years</span>
+                  </div>
+                  <div class="box-increase-number-adult">
+                    <button class="add-adult-btn">
+                      <img src="image/icon/add.png">
+                    </button>
+                    <p class="total-adult">1</p>
+                    <button class="remove-adult-btn">
+                      <img src="image/icon/minus-sign.png"
+                    </button>
+                  </div>
+                </div>
+
+                <div class="box-adults">
+                  <div class="box-text-adults">
+                    <p>Children</p>
+                    <span>0-17 years</span>
+                  </div>
+                  <div class="box-increase-number-adult">
+                    <button class="add-adult-btn">
+                      <img src="image/icon/add.png">
+                    </button>
+                    <p class="total-adult">1</p>
+                    <button class="remove-adult-btn">
+                      <img src="image/icon/minus-sign.png"
+                    </button>
+                  </div>
+                </div>
+
+                <div class="box-room">
+                  <div class="box-text-adults">
+                    <p>Rooms</p>
+                    <span>Each room should contain at least 1 adult</span>
+                  </div>
+                  <div class="box-increase-number-adult">
+                    <button class="add-adult-btn">
+                      <img src="image/icon/add.png">
+                    </button>
+                    <p class="total-adult">1</p>
+                    <button class="remove-adult-btn">
+                      <img src="image/icon/minus-sign.png"
+                    </button>
+                  </div>
+                </div>
+                <div class="box-done-btn">
+                <button class="select-done-btn">Done</button>
+                </div>
+              </div>
       <div class="main-container">
         <div class="container-popular-destination">
           <h2>Laos Destination</h2>
@@ -119,6 +174,7 @@ function generateHMTL() {
           </div>
         </div>
       </div>
+
       
       ${loadFooterSection()}
       
@@ -321,6 +377,8 @@ const notFound = document.querySelector(".not-found");
 const containerGridHotel = document.querySelector(".container-grid-hotel");
 const buttonCurrencyMain = document.querySelector(".main-button-currency");
 const tooltipCurrency = document.querySelector(".tooltip-currency");
+const selectNumberBtn = document.querySelector(".box-select-number");
+const tooltipGuestRoom = document.querySelector(".tooltip-guest-and-room");
 
 recommendedBtn.addEventListener("click", () => {
   const start = endingIndex;
@@ -405,4 +463,9 @@ containerDestination.addEventListener("click", (event) => {
 
   const name = item.dataset.nameProvince;
   window.location.href = `province-detail-page.html?name=${name}`;
+});
+
+selectNumberBtn.addEventListener("click", () => {
+  tooltipGuestRoom.classList.toggle("show");
+  selectNumberBtn.classList.toggle("hightlight");
 });

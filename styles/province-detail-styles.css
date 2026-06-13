@@ -1,6 +1,7 @@
 body {
   font-family: Poppins;
   margin: 0;
+  position: relative;
 }
 
 p {
@@ -325,13 +326,12 @@ p {
   width: 100%;
   display: flex;
   align-items: center;
-
-  box-sizing: border-box;
   gap: 5px;
+  box-sizing: border-box;
 }
 
 .box-search-hotel-input {
-  width: 45%;
+  flex: 4;
 }
 
 .search-hotel-input {
@@ -352,8 +352,14 @@ p {
   outline: 1.5px solid #ff5100;
 }
 
+.container-check-in-out {
+  display: flex;
+  flex: 3.6;
+  gap: 5px;
+}
+
 .box-check-in {
-  width: 18%;
+  width: 50%;
 }
 
 .check-in {
@@ -370,7 +376,7 @@ p {
 }
 
 .box-check-out {
-  width: 18%;
+  width: 50%;
 }
 
 .check-out {
@@ -393,7 +399,8 @@ p {
 }
 
 .box-guest-and-room {
-  width: 24%;
+  flex: 2.4;
+  flex-shrink: 0;
 }
 
 .box-select-number {
@@ -411,6 +418,107 @@ p {
   margin-top: 5px;
 }
 
+.box-select-number.hightlight {
+  outline: 1.5px solid #ff5100;
+}
+
+.tooltip-guest-and-room {
+  width: 300px;
+  background-color: white;
+  flex-direction: column;
+  bottom: -165px;
+  right: 16%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.534);
+  gap: 15px;
+  position: absolute;
+  z-index: 1;
+  display: none;
+}
+
+.tooltip-guest-and-room.show {
+  display: flex;
+}
+
+.box-adults {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid #cbcbcb;
+  padding-bottom: 5px;
+}
+
+.box-text-adults p {
+  font-weight: 500;
+}
+
+.box-text-adults span {
+  color: #666666;
+  font-size: 14px;
+}
+
+.box-increase-number-adult {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-adult-btn {
+  border: none;
+  display: flex;
+  padding: 0px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #ececec;
+  transition: background-color 0.2s;
+}
+
+.remove-adult-btn {
+  border: none;
+  display: flex;
+  padding: 0px;
+  padding: 2.5px;
+  border-radius: 5px;
+  background-color: #ececec;
+  transition: background-color 0.2s;
+}
+
+.add-adult-btn img {
+  width: 10px;
+}
+
+.remove-adult-btn img {
+  width: 15px;
+}
+
+.add-adult-btn:hover,
+.remove-adult-btn:hover {
+  background-color: #cbcbcb;
+}
+
+.box-room {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.box-done-btn {
+  display: flex;
+  justify-content: end;
+}
+
+.select-done-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.select-done-btn:hover {
+  text-decoration: underline;
+}
+
 .button-search-to {
   border: none;
   padding: 15px 20px;
@@ -418,7 +526,7 @@ p {
   color: white;
   font-weight: bold;
   border-radius: 5px;
-  margin-left: 5px;
+  margin-left: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -955,6 +1063,55 @@ p {
   }
 }
 
+@media (max-width: 920px) {
+  .box-search {
+    flex-direction: column;
+  }
+
+  .main-box-search {
+    flex-direction: column;
+  }
+
+  .box-search-hotel-input {
+    width: 100%;
+  }
+
+  .search-hotel-input {
+    border-radius: 5px;
+  }
+
+  .container-check-in-out {
+    width: 100%;
+  }
+
+  .check-in {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .check-out {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .box-guest-and-room {
+    width: 100%;
+  }
+
+  .box-select-number {
+    border-radius: 5px;
+  }
+
+  .button-search-to {
+    margin-top: 10px;
+  }
+
+  .tooltip-guest-and-room {
+    left: 13%;
+    bottom: -190px;
+  }
+}
+
 @media (max-width: 710px) {
   .container-grid-hotel {
     grid-template-columns: 1fr;
@@ -965,12 +1122,22 @@ p {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
   .container-search {
     width: 90%;
   }
 
   .header-right-section {
     display: none;
+  }
+
+  .tooltip-guest-and-room {
+    left: 8%;
+  }
+}
+
+@media (max-width: 553px) {
+  .sub-title-box-search {
+    font-size: 25px;
   }
 }
