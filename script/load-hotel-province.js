@@ -17,6 +17,12 @@ titleProvincePage.innerText = `Find Hotel ${provinceParam}`;
 let endingIndex = 6;
 let endingIndexFiltre = 6;
 
+const guestAndRoom = {
+  adult: 1,
+  children: 0,
+  room: 1,
+};
+
 const container = document.querySelector(".container-background-image");
 
 generateHMTL();
@@ -54,7 +60,7 @@ function generateHMTL() {
           <div class="box-guest-and-room">
             <p class="sub-text-box-search">guests and rooms</p>
               <button class="box-select-number">
-                1 adults,1 room
+                ${guestAndRoom.adult} adult,${guestAndRoom.room} room
               </button>
           </div>
         </div>
@@ -71,7 +77,7 @@ function generateHMTL() {
                     <button class="add-adult-btn">
                       <img src="image/icon/add.png">
                     </button>
-                    <p class="total-adult">1</p>
+                    <p class="total-adult">${guestAndRoom.adult}</p>
                     <button class="remove-adult-btn">
                       <img src="image/icon/minus-sign.png"
                     </button>
@@ -84,11 +90,11 @@ function generateHMTL() {
                     <span>0-17 years</span>
                   </div>
                   <div class="box-increase-number-adult">
-                    <button class="add-adult-btn">
+                    <button class="add-children-btn">
                       <img src="image/icon/add.png">
                     </button>
-                    <p class="total-adult">1</p>
-                    <button class="remove-adult-btn">
+                    <p class="total-children">${guestAndRoom.children}</p>
+                    <button class="remove-children-btn">
                       <img src="image/icon/minus-sign.png"
                     </button>
                   </div>
@@ -100,11 +106,11 @@ function generateHMTL() {
                     <span>Each room should contain at least 1 adult</span>
                   </div>
                   <div class="box-increase-number-adult">
-                    <button class="add-adult-btn">
+                    <button class="add-room-btn">
                       <img src="image/icon/add.png">
                     </button>
-                    <p class="total-adult">1</p>
-                    <button class="remove-adult-btn">
+                    <p class="total-room">${guestAndRoom.room}</p>
+                    <button class="remove-room-btn">
                       <img src="image/icon/minus-sign.png"
                     </button>
                   </div>
@@ -379,6 +385,17 @@ const buttonCurrencyMain = document.querySelector(".main-button-currency");
 const tooltipCurrency = document.querySelector(".tooltip-currency");
 const selectNumberBtn = document.querySelector(".box-select-number");
 const tooltipGuestRoom = document.querySelector(".tooltip-guest-and-room");
+const addAdultBtn = document.querySelector(".add-adult-btn");
+const removeAdultBtn = document.querySelector(".remove-adult-btn");
+const totalAdult = document.querySelector(".total-adult");
+const addChildrenBtn = document.querySelector(".add-children-btn");
+const removeChildrenBtn = document.querySelector(".remove-children-btn");
+const totalChildren = document.querySelector(".total-children");
+const addRoomBtn = document.querySelector(".add-room-btn");
+const removeRoomBtn = document.querySelector(".remove-room-btn");
+const totalRoom = document.querySelector(".total-room");
+const selectDonebtn = document.querySelector(".select-done-btn");
+const selectNumberBox = document.querySelector(".box-select-number");
 
 recommendedBtn.addEventListener("click", () => {
   const start = endingIndex;
@@ -466,6 +483,73 @@ containerDestination.addEventListener("click", (event) => {
 });
 
 selectNumberBtn.addEventListener("click", () => {
+  tooltipGuestRoom.classList.toggle("show");
+  selectNumberBtn.classList.toggle("hightlight");
+});
+
+addAdultBtn.addEventListener("click", () => {
+  if (guestAndRoom.adult === 10) {
+    return;
+  }
+  guestAndRoom.adult += 1;
+  totalAdult.innerText = guestAndRoom.adult;
+});
+
+removeAdultBtn.addEventListener("click", () => {
+  if (guestAndRoom.adult === 1) {
+    return;
+  }
+
+  guestAndRoom.adult -= 1;
+  totalAdult.innerText = guestAndRoom.adult;
+});
+
+addChildrenBtn.addEventListener("click", () => {
+  if (guestAndRoom.children === 10) {
+    return;
+  }
+
+  guestAndRoom.children += 1;
+  totalChildren.innerText = guestAndRoom.children;
+});
+
+removeChildrenBtn.addEventListener("click", () => {
+  if (guestAndRoom.children === 0) {
+    return;
+  }
+
+  guestAndRoom.children -= 1;
+  totalChildren.innerText = guestAndRoom.children;
+});
+
+addRoomBtn.addEventListener("click", () => {
+  if (guestAndRoom.room === 10) {
+    return;
+  }
+
+  guestAndRoom.room += 1;
+  totalRoom.innerText = guestAndRoom.room;
+});
+
+removeRoomBtn.addEventListener("click", () => {
+  if (guestAndRoom.room === 1) {
+    return;
+  }
+
+  guestAndRoom.room -= 1;
+  totalRoom.innerText = guestAndRoom.room;
+});
+
+selectDonebtn.addEventListener("click", () => {
+  let totalsGuests = guestAndRoom.adult + guestAndRoom.children;
+  const formatGuest =
+    totalsGuests > 1 ? `${totalsGuests} Guests` : `${totalsGuests} Guest`;
+  const totalsRooms =
+    guestAndRoom.room > 1
+      ? `${guestAndRoom.room} rooms`
+      : `${guestAndRoom.room} room`;
+
+  selectNumberBox.innerHTML = `${formatGuest}, ${totalsRooms}`;
   tooltipGuestRoom.classList.toggle("show");
   selectNumberBtn.classList.toggle("hightlight");
 });

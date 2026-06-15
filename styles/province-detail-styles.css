@@ -464,7 +464,9 @@ p {
   gap: 10px;
 }
 
-.add-adult-btn {
+.add-adult-btn,
+.add-children-btn,
+.add-room-btn {
   border: none;
   display: flex;
   padding: 0px;
@@ -472,9 +474,12 @@ p {
   border-radius: 5px;
   background-color: #ececec;
   transition: background-color 0.2s;
+  cursor: pointer;
 }
 
-.remove-adult-btn {
+.remove-adult-btn,
+.remove-children-btn,
+.remove-room-btn {
   border: none;
   display: flex;
   padding: 0px;
@@ -482,18 +487,27 @@ p {
   border-radius: 5px;
   background-color: #ececec;
   transition: background-color 0.2s;
+  cursor: pointer;
 }
 
-.add-adult-btn img {
+.add-adult-btn img,
+.add-children-btn img,
+.add-room-btn img {
   width: 10px;
 }
 
-.remove-adult-btn img {
+.remove-adult-btn img,
+.remove-children-btn img,
+.remove-room-btn img {
   width: 15px;
 }
 
 .add-adult-btn:hover,
-.remove-adult-btn:hover {
+.remove-adult-btn:hover,
+.add-children-btn:hover,
+.remove-children-btn:hover,
+.add-room-btn:hover,
+.remove-room-btn:hover {
   background-color: #cbcbcb;
 }
 
